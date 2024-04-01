@@ -56,7 +56,7 @@
 
 | Day |                Name             |
 | --- | :-----------------------------: |
-| 1   | [Creating Card, VCS, and Deploy](https://creating-card-vcs-deploy.vercel.app/) |
+| 1   |                                 |
 | 2   |                                 |
 | 3   |                                 |
 | 4   |                                 |
