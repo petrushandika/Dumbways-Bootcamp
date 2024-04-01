@@ -56,7 +56,7 @@
 
 | Day |                Name             |
 | --- | :-----------------------------: |
-| 1   |                                 |
+| 1   | [Creating Card](https://creating-card-day-one.vercel.app/) |
 | 2   |                                 |
 | 3   |                                 |
 | 4   |                                 |
