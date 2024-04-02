@@ -60,6 +60,7 @@ body {
 .navbar a:hover {
     color: orangered;
 }
+
 .form {
     padding: 10px;
 }
@@ -116,4 +117,11 @@ body {
     border: none;
     border-radius: 25px;
     cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar ul,
+    .navbar a {
+        display: none;
+    }
 }
