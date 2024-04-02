@@ -8,7 +8,7 @@
 | Day |                Name             |
 | --- | :-----------------------------: |
 | 1   | [Creating Card, VCS, and Deploy](https://creating-card-vcs-deploy.vercel.app/) |
-| 2   |                                 |
+| 2   | [Contact Form, Navbar, and Layouting](https://contact-form-navbar-layouting.vercel.app/index.html) |
 | 3   |                                 |
 | 4   |                                 |
 | 5   |                                 |
