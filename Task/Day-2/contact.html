@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <title>Contact Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-left">
+          <img src="assets/images/dumbways.png" alt="dumbways" />
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">My Project</a></li>
+          </ul>
+        </div>
+        <div class="navbar-right">
+          <a href="#">Contact Me</a>
+        </div>
+      </nav>
+
+      <!-- Form -->
+      <div class="form">
+        <form method="POST">
+          <h1>GET IN TOUCH</h1>
+          <label for="name">Name</label>
+          <input type="text" id="name" />
+          <label for="email">Email</label>
+          <input type="email" id="email" />
+          <label for="phone">Phone Number</label>
+          <input type="text" id="phone" />
+          <label for="subject">Subject</label>
+          <select name="" id="subject">
+            <option value="frontend">Frontend Developer</option>
+            <option value="backend">Backend Developer</option>
+            <option value="fullstack" selected>Fullstack Developer</option>
+            <option value="ai">AI Engineer</option>
+            <option value="data">Database Administrator</option>
+          </select>
+          <label for="message">Message</label>
+          <textarea name="message" id="message"></textarea>
+          <div class="right-position">
+            <button class="submit-button">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
