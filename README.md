@@ -7,8 +7,8 @@
 
 | Day |                Name             |
 | --- | :-----------------------------: |
-| 1   | [Creating Card, VCS, and Deploy](https://creating-card-vcs-deploy.vercel.app/) |
-| 2   | [Contact Form, Navbar, and Layouting](https://contact-form-navbar-layouting.vercel.app/index.html) |
+| 1   | [Creating Card, VCS, and Deploy]() |
+| 2   | [Contact Form, Navbar, and Layouting]() |
 | 3   |                                 |
 | 4   |                                 |
 | 5   |                                 |
@@ -56,8 +56,8 @@
 
 | Day |                Name             |
 | --- | :-----------------------------: |
-| 1   | [Creating Card](https://creating-card-day-one.vercel.app/) |
-| 2   |                                 |
+| 1   | [Creating Card](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-1/) |
+| 2   | [Navbar and Contact Form](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-2/) |
 | 3   |                                 |
 | 4   |                                 |
 | 5   |                                 |
