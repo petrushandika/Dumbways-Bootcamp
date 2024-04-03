@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/contact.css" />
+    <title>Contact Form</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-left">
+          <img src="assets/images/dumbways.png" alt="dumbways" />
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="navbar-right">
+          <a href="#">Contact Me</a>
+        </div>
+      </nav>
+      <!-- Form Submission -->
+      <section class="contact">
+        <h2>Form Submission</h2>
+        <form action="#">
+          <div class="input-field field">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="item" placeholder="Full Name" />
+            <div class="error-text">Please enter your Full Name</div>
+          </div>
+          <div class="input-field field">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              id="email"
+              class="item"
+              placeholder="Email Address"
+            />
+            <div class="error-text">Please enter your Email Address</div>
+          </div>
+          <div class="input-field field">
+            <label for="phone">Phone</label>
+            <input
+              type="text"
+              id="phone"
+              class="item"
+              placeholder="Phone Number"
+            />
+            <div class="error-text">Please enter your Phone Number</div>
+          </div>
+          <div class="input-field field">
+            <label for="subject">Subject</label>
+            <select name="subject" id="subject" class="item">
+              <option value="frontend">FrontEnd</option>
+              <option value="backend">BackEnd</option>
+              <option value="fullstack">FullStack</option>
+            </select>
+            <div class="error-text">Select a subject to continue</div>
+          </div>
+          <div class="textarea-field field">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" class="item"></textarea>
+            <div class="error-text">Type in your Message here</div>
+          </div>
+          <div class="button-field field">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="assets/js/contact.js"></script>
+  </body>
+</html>
