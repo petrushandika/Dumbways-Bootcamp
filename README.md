@@ -1,5 +1,6 @@
 # Dumbways Bootcamp
 
+<!--
 ## Course
 <table>
   <tr><th></th><th></th></tr>
@@ -48,6 +49,7 @@
 | 29  |                                 |
 | 30  |                                 |
 </td></tr></table>
+-->
 
 ## Task
 <table>
@@ -58,7 +60,7 @@
 | --- | :-----------------------------: |
 | 1   | [Creating Card](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-1/) |
 | 2   | [Navbar and Contact Form](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-2/) |
-| 3   |                                 |
+| 3   | [Navbar and Contact Form](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-3/) |
 | 4   |                                 |
 | 5   |                                 |
 | 6   |                                 |
