@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 100vh;
 }
 
 .navbar {
@@ -62,81 +63,62 @@ body {
 }
 
 .contact {
-    margin: 150px auto;
+    width: 100%;
+    height: fit-content;
     color: #fff;
     background: linear-gradient(135deg, #23debc, #2770ce);
     border-radius: 5px;
 }
 
 .contact h2 {
-    padding: 25px 0;
-    font-size: 1.5em;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
-    margin-top: 50px;
+    padding-top: 25px;
 }
 
-.contact form {
+form {
     width: 600px;
-    height: fit-content;
-    padding: 0 25px;
+    padding: 35px 50px;
 }
 
-.input-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
-}
-
+.input-field,
 .textarea-field {
+    width: 100%;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
 }
 
 .input-field input,
-.input-field select,
-.textarea-field textarea {
-    width: 100%;
-    height: 35px;
-    padding: 5px 10px;
-    border: 1px solid #fff;
+.input-field select {
+    height: 30px;
+    padding: 0 10px;
     outline: none;
+    border: none;
     border-radius: 5px;
 }
 
 .textarea-field textarea {
     height: 100px;
-    resize: none;
+    padding: 5px 10px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
 }
 
-.button-field button {
-    border: none;
-    width: 100%;
+.submit-field button {
+    width: 100px;
     height: 30px;
-    max-width: 100px;
-    margin: 25px 0;
     color: #fff;
     background: linear-gradient(135deg, #e1e221, #d61313);
+    border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.error-text {
-    font-size: 0.8em;
-    color: red;
-    margin: 5px 1px;
-    display: none;
+.submit-field button:hover {
+    background: linear-gradient(135deg, #d61313, #e1e221);
 }
-
-.item.error {
-    border: 1px solid red;
-}
-
-.input-field.error .error-text,
-.textarea-field.error .error-text {
-    display: block;
-}
-
 
 @media only screen and (max-width: 768px) {
     .navbar ul,
