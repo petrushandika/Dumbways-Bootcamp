@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
-    initRoutes("routes1", 1, "content1", "Creating Card");
-    initRoutes("routes2", 2, "content2", "Navbar and Contact Form");
+    initRoutes("dayOne", 1, "contentOne", "Creating Card");
+    initRoutes("dayTwo", 2, "contentTwo", "Navbar and Contact Form");
+    initRoutes("dayThree", 3, "contentThree", "Form Submission");
 })
 
 function initRoutes(routesId, startIndex, contentId, paragraphContent) {
