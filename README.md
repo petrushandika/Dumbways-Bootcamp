@@ -60,8 +60,8 @@
 | --- | :-----------------------------: |
 | 1   | [Creating Card](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-1/) |
 | 2   | [Navbar and Contact Form](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-2/) |
-| 3   | [Form Submission](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-3/) |
-| 4   |                                 |
+| 3   | [Form Submission](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-3/contact.html) |
+| 4   | [My Project Pages](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-4/project.html) |
 | 5   |                                 |
 | 6   |                                 |
 | 7   |                                 |
