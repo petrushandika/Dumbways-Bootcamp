@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/project.css" />
+    <title>My Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <div class="navbar-left">
+          <img src="assets/images/dumbways.png" alt="dumbways" />
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">My Project</a></li>
+          </ul>
+        </div>
+        <div class="navbar-right">
+          <a href="#">Contact Me</a>
+        </div>
+      </nav>
+
+      <!-- Project -->
+      <div class="project">
+        <form action="#">
+          <h2>Create Post Blog</h2>
+          <div class="input-field">
+            <label for="title">Title</label>
+            <input type="text" id="title">
+          </div>
+          <div class="textarea-field">
+            <label for="content">Content</label>
+            <textarea name="contact" id="content"></textarea>
+          </div>
+          <div class="input-field">
+            <label for="upload">Upload Image</label>
+            <input type="file" id="upload" class="upload">
+          </div>
+          <div class="submit-field">
+            <button type="submit" onclick="addProject(event);">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script src="assets/js/project.js"></script>
+  </body>
+</html>
