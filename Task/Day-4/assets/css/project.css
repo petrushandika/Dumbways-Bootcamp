@@ -246,6 +246,11 @@ input[type="checkbox"] {
   flex-direction: column;
 }
 
+.item a {
+  color: #000;
+  text-decoration: none;
+}
+
 .description p {
   font-size: 0.8em;
   text-align: justify;
