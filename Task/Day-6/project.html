@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/project.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <title>My Project</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <img src="assets/images/dumbways.png" alt="dumbways" />
+        <div class="navbar-menu">
+          <div class="navbar-left">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="project.html">My Project</a></li>
+            </ul>
+          </div>
+          <div class="navbar-right">
+            <a href="contact.html">Contact Me</a>
+            <i class="fa-solid fa-bars" id="hamburger-button" onclick="openHamburger()"></i>
+          </div>
+        </div>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <a href="index.html" class="active">Home</a>
+        <a href="project.html">Blog</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+
+      <!-- Project Form -->
+      <div class="project">
+        <h2>ADD MY PROJECT</h2>
+        <form action="#">
+          <div class="input-field field">
+            <label for="name">Project Name</label>
+            <input type="text" id="name" />
+          </div>
+          <div class="input-field field">
+            <div class="date-time">
+              <div class="date">
+                <label for="start">Start Date</label>
+                <input type="date" id="start" />
+              </div>
+              <div class="date">
+                <label for="end">End Date</label>
+                <input type="date" id="end" />
+              </div>
+            </div>
+          </div>
+          <div class="textarea-field field">
+            <label for="description">Description</label>
+            <textarea name="description" id="description"></textarea>
+          </div>
+          
+          <div class="checkbox-field field">
+          <label>Technologies</label>
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="flex-container">
+                <div>
+                  <input type="checkbox" id="node" class="programming"/>
+                  <label for="node">Node JS</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="react" class="programming"/>
+                  <label for="react">React JS</label>
+                </div>
+              </div>
+            </div>
+            <div class="grid-item">
+              <div class="flex-container">
+                <div>
+                  <input type="checkbox" id="vue" class="programming"/>
+                  <label for="vue">Vue JS</label>
+                </div>
+                <div>
+                  <input type="checkbox" id="golang" class="programming"/>
+                  <label for="golang">Golang</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="input-field">
+            <label for="upload">Upload Image</label>
+            <input type="file" id="upload" class="upload" />
+          </div>
+          <div class="submit-field">
+            <button type="submit" onclick="addProject(event);">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Project Content -->
+      <div class="content project-content">
+        <h2>MY PROJECT</h2>
+        <div class="grid-content" id="project">
+          <!-- Content One -->
+          <div class="card-item">
+            <div class="card-image">
+              <a href="detail-project.html">
+                <img src="assets/images/mobile.png" alt="mobile" />
+              </a>
+            </div>
+            <div class="item">
+              <a href="detail-project.html">
+              <div class="description">
+                <div class="heading">
+                  <h3>Dumbways Web App - 2024</h3>
+                  <span class="time">Duration: 3 Month</span>
+                </div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta qui dignissimos beatae fugit, quod ratione sit.
+                </p>
+              </div>
+            </a>
+              <div class="language">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-java"></i>
+              </div>
+              <div class="button-field">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+          <!-- Content Two -->
+          <div class="card-item">
+            <div class="card-image">
+              <img src="assets/images/code.jpg" alt="code" />
+            </div>
+            <div class="item">
+              <div class="description">
+                <div class="heading">
+                  <h3>Winter Tech - 2024</h3>
+                  <span class="time">Duration: 3 Month</span>
+                </div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta qui dignissimos beatae fugit, quod ratione sit.
+                </p>
+              </div>
+              <div class="language">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-java"></i>
+              </div>
+              <div class="button-field">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+          <!-- Content Three -->
+          <div class="card-item">
+            <div class="card-image">
+              <img src="assets/images/crypto.jpg" alt="cryptocurrency" />
+            </div>
+            <div class="item">
+              <div class="description">
+                <div class="heading">
+                  <h3>Cryptocurrency Trend - 2022</h3>
+                  <span class="time">Duration: 3 Month</span>
+                </div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta qui dignissimos beatae fugit, quod ratione sit.
+                </p>
+              </div>
+              <div class="language">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-java"></i>
+              </div>
+              <div class="button-field">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+          <!-- Content Four -->
+          <div class="card-item">
+            <div class="card-image">
+              <img src="assets/images/chatgpt.jpg" alt="chatgpt" />
+            </div>
+            <div class="item">
+              <div class="description">
+                <div class="heading">
+                  <h3>Artificial Intellegence ChatGPT - 2022</h3>
+                  <span class="time">Duration: 3 Month</span>
+                </div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta qui dignissimos beatae fugit, quod ratione sit.
+                </p>
+              </div>
+              <div class="language">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-java"></i>
+              </div>
+              <div class="button-field">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+          </div>
+          <!-- Content Five -->
+          <div class="card-item">
+            <div class="card-image">
+              <img src="assets/images/robot.png" alt="robot" />
+            </div>
+            <div class="item">
+              <div class="description">
+                <div class="heading">
+                  <h3>Robot Change Some Work - 2023</h3>
+                  <span class="time">Duration: 3 Month</span>
+                </div>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta qui dignissimos beatae fugit, quod ratione sit.
+                </p>
+              </div>
+              <div class="language">
+                <i class="fa-brands fa-html5"></i>
+                <i class="fa-brands fa-css3-alt"></i>
+                <i class="fa-brands fa-java"></i>
+              </div>
+              <div class="button-field">
+                <button class="edit">Edit</button>
+                <button class="delete">Delete</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/project.js"></script>
+  </body>
+</html>

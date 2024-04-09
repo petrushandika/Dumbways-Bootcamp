@@ -1,0 +1,97 @@
+/* @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .content {
+        width: 100%;
+        height: fit-content;
+        padding: 35px 50px;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+} */
+
+@media only screen and (max-width: 768px) {
+    .navbar-menu ul {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-menu a {
+        display: none;
+    }
+
+    #hamburger-button {
+        display: block;
+    }
+
+    .hamburger {
+        width: 100%;
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(135deg, #23debc, #2770ce);
+        gap: 10px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+
+    .navbar-right i {
+        color: #fff;
+        font-size: 1.5em;
+        margin-right: 50px;
+    }
+
+    .navbar img {
+        margin-left: 50px;
+    }
+    
+    .container {
+        margin: 0;
+        padding: 25px;
+    }
+
+    .content {
+        width: 100%;
+        height: fit-content;
+        padding: 25px;
+    }
+
+    .contact {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .project {
+        padding: 0 25px;
+    }
+
+    .date-time {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .submit-field button {
+        width: 30%;
+    }
+
+    .project-content {
+        margin: 0;
+        padding: 0;
+    }
+
+    .grid-content {
+        padding: 0;
+    }
+}
