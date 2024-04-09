@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
     initRoutes("dayThree", 3, "contentThree", "Form Submission");
     initRoutes("dayFour", 4, "contentFour", "My Project Pages");
     initRoutes("dayFive", 5, "contentFive", "Count Duration");
+    initRoutes("daySix", 6, "contentSix", "Responsive Layout");
 })
 
 function initRoutes(routesId, startIndex, contentId, paragraphContent) {
