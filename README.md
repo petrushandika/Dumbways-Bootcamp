@@ -62,8 +62,8 @@
 | 2   | [Navbar and Contact Form](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-2/) |
 | 3   | [Form Submission](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-3/contact.html) |
 | 4   | [My Project Pages](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-4/project.html) |
-| 5   |                                 |
-| 6   |                                 |
+| 5   | [Count Duration](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-5/project.html) |
+| 6   | [Responsive Layout](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-6/) |
 | 7   |                                 |
 | 8   |                                 |
 | 9   |                                 |
