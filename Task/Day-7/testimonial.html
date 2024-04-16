@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/navbar.css" />
+    <link rel="stylesheet" href="assets/css/testimonial.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <title>My Testimonials</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Navbar -->
+      <nav class="navbar">
+        <img src="assets/images/dumbways.png" alt="dumbways" />
+        <div class="navbar-menu">
+          <div class="navbar-left">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="project.html">My Project</a></li>
+              <li><a href="testimonial.html">Testimonials</a></li>
+            </ul>
+          </div>
+          <div class="navbar-right">
+            <a href="contact.html">Contact Me</a>
+            <i
+              class="fa-solid fa-bars"
+              id="hamburger-button"
+              onclick="openHamburger()"
+            ></i>
+          </div>
+        </div>
+      </nav>
+      <div class="hamburger" id="hamburger">
+        <a href="index.html" class="active">Home</a>
+        <a href="project.html">My Project</a>
+        <a href="testimonial.html">Testimonials</a>
+        <a href="contact.html">Contact Me</a>
+      </div>
+
+      <!-- Testimonials -->
+      <div class="testimonial">
+        <h2>My Testimonials</h2>
+        <div class="grid-content" id="testimonial">
+          <div class="card-item">
+            <div class="card-image">
+              <a href="">
+                <img src="assets/images/people-one.jpg" alt="people" />
+              </a>
+            </div>
+            <div class="comment">
+              <p class="comment-text">"Mantap sekali jasanya bre"</p>
+            </div>
+            <div class="creator">
+              <p class="creator-text">- Petrus Handika</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-image">
+              <a href="">
+                <img src="assets/images/poeple-two.jpeg" alt="people" />
+              </a>
+            </div>
+            <div class="comment">
+              <p class="comment-text">"Mantap lah pokoknya"</p>
+            </div>
+            <div class="creator">
+              <p class="creator-text">- Michael Ananda</p>
+            </div>
+          </div>
+          <div class="card-item">
+            <div class="card-image">
+              <a href="">
+                <img src="assets/images/people-three.jpg" alt="people" />
+              </a>
+            </div>
+            <div class="comment">
+              <p class="comment-text">"Gacor abangkuhh"</p>
+            </div>
+            <div class="creator">
+              <p class="creator-text">- Jamaludin</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="assets/js/navbar.js"></script>
+  </body>
+</html>
