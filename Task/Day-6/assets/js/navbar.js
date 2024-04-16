@@ -9,5 +9,5 @@ function openHamburger() {
         hamburgerNavContainer.style.display = "none";
     }
     
-    isOpen = !isOpen; // Mengubah status isOpen
+    isOpen = !isOpen;
 }

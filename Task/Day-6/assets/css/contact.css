@@ -12,152 +12,78 @@ body {
   height: fit-content;
 }
 
-.navbar {
-  width: 100%;
-  height: 75px;
-  background: linear-gradient(135deg, #23debc, #2770ce);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 99;
-}
-
-.navbar img {
-  width: 50px;
-  height: 35px;
-  margin-left: 100px;
-}
-
-.navbar-menu {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.navbar-left {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-  margin-left: 100px;
-}
-
-.navbar-right a {
-  margin-right: 100px;
-  background-color: #e7e73e;
-  border-radius: 10px;
-  padding: 5px 10px;
-}
-
-.navbar ul {
-  display: flex;
-  gap: 50px;
-}
-
-.navbar li {
-  list-style: none;
-}
-
-.navbar a {
-  font-weight: 500;
-  color: #fff;
-  text-decoration: none;
-  transition: all 0.5s ease;
-}
-
-.navbar a:hover {
-  color: rgba(0, 0, 0, 0.5);
-}
-
-#hamburger-button {
-  display: none;
-}
-
-.hamburger a {
-  text-decoration: none;
-  color: #fff;
-  background-color: transparent;
-  text-align: center;
-  padding: 10px;
-}
-
-
 .contact {
-    max-width: 600px;
-    margin: 150px auto;
-    color: #fff;
-    background: linear-gradient(135deg, #23debc, #2770ce);
-    border-radius: 5px;
+  max-width: 600px;
+  margin: 150px auto;
+  color: #fff;
+  background: linear-gradient(135deg, #23debc, #2770ce);
+  border-radius: 5px;
 }
 
 .contact h2 {
-    padding: 25px 0;
-    font-size: 1.5em;
-    font-weight: 500;
-    text-align: center;
-    margin-top: 50px;
+  padding: 25px 0;
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 50px;
 }
 
 .contact form {
-    height: fit-content;
-    padding: 0 25px;
+  height: fit-content;
+  padding: 0 25px;
 }
 
 .input-field {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 .textarea-field {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .input-field input,
 .input-field select,
 .textarea-field textarea {
-    width: 100%;
-    height: 35px;
-    padding: 5px 10px;
-    border: 1px solid #fff;
-    outline: none;
-    border-radius: 5px;
+  width: 100%;
+  height: 35px;
+  padding: 5px 10px;
+  border: 1px solid #fff;
+  outline: none;
+  border-radius: 5px;
 }
 
 .textarea-field textarea {
-    height: 100px;
-    resize: none;
+  height: 100px;
+  resize: none;
 }
 
 .button-field button {
-    border: none;
-    width: 100%;
-    height: 30px;
-    max-width: 100px;
-    margin: 25px 0;
-    color: #fff;
-    background: linear-gradient(135deg, #e1e221, #d61313);
-    border-radius: 5px;
-    cursor: pointer;
+  border: none;
+  width: 100%;
+  height: 30px;
+  max-width: 100px;
+  margin: 25px 0;
+  color: #fff;
+  background: linear-gradient(135deg, #e1e221, #d61313);
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .error-text {
-    font-size: 0.8em;
-    color: red;
-    margin: 5px 1px;
-    display: none;
+  font-size: 0.8em;
+  color: red;
+  margin: 5px 1px;
+  display: none;
 }
 
 .item.error {
-    border: 1px solid red;
+  border: 1px solid red;
 }
 
 .input-field.error .error-text,
 .textarea-field.error .error-text {
-    display: block;
+  display: block;
 }
-
