@@ -1,0 +1,50 @@
+/* @media only screen and (min-width: 768px) and (max-width: 1024px) {
+    .content {
+        width: 100%;
+        height: fit-content;
+        padding: 35px 50px;
+    }
+
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+} */
+
+@media only screen and (max-width: 768px) {
+  .navbar-menu ul {
+    display: none;
+    width: 100%;
+  }
+
+  .navbar-menu a {
+    display: none;
+  }
+
+  #hamburger-button {
+    display: block;
+  }
+
+  .hamburger {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #23debc, #2770ce);
+    gap: 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .navbar-right i {
+    color: #fff;
+    font-size: 1.5em;
+    margin-right: 50px;
+  }
+
+  .navbar img {
+    margin-left: 50px;
+  }
+}
