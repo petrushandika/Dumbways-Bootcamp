@@ -14,14 +14,14 @@ body {
 }
 
 .testimonial {
-  margin: 0 100px;
+  margin: 0 75px;
 }
 
 .testimonial h2 {
   text-align: center;
   font-size: 1.75em;
   font-weight: bold;
-  margin-bottom: 50px;
+  margin: 100px 0 25px 0;
 }
 
 .grid-content {
