@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+  width: 100%;
+  height: fit-content;
+}
+
+.container {
+  padding: 50px 100px;
+}
+
+.content {
+  margin: 100px auto;
+  padding: 5% 5%;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.profile p {
+  text-align: justify;
+}
+
+.contact {
+  display: flex;
+  align-items: center;
+  margin: 50px 0;
+}
+
+.contact button {
+  font-size: 1em;
+  background-color: #000;
+  border: none;
+  margin-right: 25px;
+  padding: 5px 25px;
+  border-radius: 25px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.contact p {
+  margin-right: 10px;
+}
+
+.fa-download {
+  font-size: 1.2em;
+  color: #000;
+}
+
+.social-media {
+  display: flex;
+  gap: 25px;
+}
+
+.social-media i {
+  font-size: 2em;
+}
+
+.fa-linkedin-in {
+  background: linear-gradient(135deg, #2b50de, #21bece);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fa-instagram {
+  background: linear-gradient(135deg, #893ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fa-facebook-f {
+  background: linear-gradient(135deg, #3ac6c9, #3d18c4);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.fa-github {
+  background: linear-gradient(135deg, #7b7e7e, #0a0a0a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.card-profile {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  border-radius: 5px;
+}
+
+.card-profile img {
+  width: 100%;
+  max-width: 350px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.card-profile h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.card-profile p {
+  font-size: 0.9em;
+  margin-bottom: 25px;
+}
