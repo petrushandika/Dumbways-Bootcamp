@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     initRoutes("dayFive", 5, "contentFive", "Count Duration");
     initRoutes("daySix", 6, "contentSix", "Responsive Layout");
     initRoutes("daySeven", 7, "contentSeven", "OOP Concepts");
+    initRoutes("dayEight", 8, "contentEight", "HOF and Callbacks");
 })
 
 function initRoutes(routesId, startIndex, contentId, paragraphContent) {
