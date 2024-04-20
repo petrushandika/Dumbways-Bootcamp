@@ -4,9 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/css/navbar.css" />
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/testimonial.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
-    <title>Home</title>
+    <title>My Testimonials</title>
   </head>
   <body>
     <div class="container">
@@ -32,17 +32,32 @@
         </div>
       </nav>
       <div class="hamburger" id="hamburger">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="project.html">My Project</a>
         <a href="testimonial.html">Testimonials</a>
         <a href="contact.html">Contact Me</a>
       </div>
 
+      <!-- Testimonials -->
+      <div class="testimonial">
+        <h2>My Testimonials</h2>
+        <div class="rating">
+          <h2>Rating By Star</h2>
+          <div class="container-rating">
+          <button onclick="allTestimonial()" class="rating-button">ALL</button>
+          <button onclick="filterTestimonial(1)" class="rating-button">1<i class="fa-solid fa-star"></i></button>
+          <button onclick="filterTestimonial(2)" class="rating-button">2<i class="fa-solid fa-star"></i></button>
+          <button onclick="filterTestimonial(3)" class="rating-button">3<i class="fa-solid fa-star"></i></button>
+          <button onclick="filterTestimonial(4)" class="rating-button">4<i class="fa-solid fa-star"></i></button>
+          <button onclick="filterTestimonial(5)" class="rating-button">5<i class="fa-solid fa-star"></i></button>
+        </div>
+        </div>
+        <div class="grid-content" id="testimonial">
+
+        </div>
     </div>
-    <script
-      src="https://kit.fontawesome.com/ebda1b5b9f.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/ebda1b5b9f.js" crossorigin="anonymous"></script>
     <script src="assets/js/navbar.js"></script>
+    <script src="assets/js/ajax.js"></script>
   </body>
 </html>
