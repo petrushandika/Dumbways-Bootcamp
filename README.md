@@ -65,8 +65,8 @@
 | 5   | [Count Duration](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-5/project.html) |
 | 6   | [Responsive Layout](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-6/) |
 | 7   | [OOP Concepts](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-7/testimonial.html) |
-| 8   |                                 |
-| 9   |                                 |
+| 8   | [HOF and Callbacks](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-8/testimonial.html) |
+| 9   | [Async, Promises, and Ajax](https://petrushandika.github.io/Dumbways-Bootcamp/Task/Day-9/testimonial.html) |
 | 10  |                                 |
 
  </td><td>
