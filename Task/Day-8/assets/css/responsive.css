@@ -1,16 +1,30 @@
-/* @media only screen and (min-width: 768px) and (max-width: 1024px) {
-    .content {
-        width: 100%;
-        height: fit-content;
-        padding: 35px 50px;
-    }
+@media only screen and (max-width: 1024px) {
+  .contact {
+    display: flex;
+    flex-direction: column;
+  }
 
-    .social-media {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-} */
+  .contact form {
+    width: 100%;
+  }
+
+  .contact h2 {
+    padding: 0;
+    margin-top: 25px;
+  }
+
+  .content {
+    width: 100%;
+    height: fit-content;
+    padding: 35px 50px;
+  }
+
+  .social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
 
 @media only screen and (max-width: 768px) {
   .navbar-menu ul {
