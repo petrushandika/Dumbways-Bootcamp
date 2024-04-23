@@ -1,6 +1,6 @@
 function eCommerce() {
   const limitDiscount = 500000;
-  const discount = 0.1;
+  const discount = 0.10;
 
   const totalShopping = parseInt(prompt("Masukkan total belanjaan:"));
 

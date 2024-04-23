@@ -42,6 +42,7 @@ header nav ul li a {
 main {
     width: 100%;
     padding: 2.5rem 5rem;
+    background-color: aliceblue;
 }
 
 main article {
