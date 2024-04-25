@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dumbways</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"">
+  </head>
+  <body>
+    <!-- Navbar Menu -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid mx-5 text-center">
+        <img
+          src="assets/images/dumbways.png"
+          class="navbar-brand w-1"
+          href="#"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active fw-semibold mx-2"
+                aria-current="page"
+                href="/"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="blog">Blog</a>
+            </li>
+          </ul>
+          <button class="btn text-light bg-warning rounded-pill " type="submit">
+            <a href="contact" class="text-decoration-none text-light">Contact Me</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Contact -->
+    <div class="m-5">
+      <h1 class="text-center">GET IN TOUCH</h1>
+      <div class="d-flex flex-column gap-3">
+        <!-- Name -->
+        <div class="">
+          <label for="name">Name</label>
+          <input type="text" class="form-control bs-1" />
+        </div>
+        <!-- Email -->
+        <div class="">
+          <label for="emial">Email</label>
+          <input type="email" class="form-control bs-1" />
+        </div>
+        <!-- Phone Number -->
+        <div class="">
+          <label for="phone">Phone Number</label>
+          <input type="text" class="form-control bs-1" />
+        </div>
+        <!-- Subject -->
+        <div class="">
+          <label for="subject">Subject</label>
+          <select class="form-select bs-1"" aria-label="Default select example">
+            <option value="1" selected>Fullstack</option>
+            <option value="2">Frontend</option>
+            <option value="3">Backend</option>
+          </select>
+        </div>
+        <!-- Message -->
+        <div class="">
+            <label for="message">Message</label>
+          <textarea class="form-control bs-1" style="height: 150px"></textarea>
+        </div>
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-end">
+            <button class="btn btn-warning text-light rounded-pill">Submit</button>
+          </div>
+      </div>
+    </div>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
