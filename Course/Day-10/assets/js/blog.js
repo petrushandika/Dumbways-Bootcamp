@@ -36,15 +36,19 @@ function newData() {
     document.getElementById("project").innerHTML += `
     <div class="col">
             <div class="card" style="width: 18rem">
+            <a href="detail.blog.html" class="text-decoration-none text-black">
               <img
                 src="${project.upload}"
                 alt="any"
               />
+              </a>
               <div class="card-body">
+              <a href="detail.blog.html" class="text-decoration-none text-black">
                 <h5 class="card-title">${project.title}</h5>
                 <p class="card-text">
                   ${project.description}
                 </p>
+                </a>
                 <a href="#" class="btn btn-warning text-light">Learn More</a>
               </div>
             </div>

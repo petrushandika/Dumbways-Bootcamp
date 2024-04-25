@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dumbways</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
@@ -51,57 +51,23 @@
       </div>
     </nav>
 
-    <!-- Form Blog -->
+    <!-- Detail Blog -->
     <div class="m-5">
       <h1 class="text-center fs-2">ADD MY BLOG</h1>
-      <div class="d-flex flex-column gap-4" id="form">
-        <!-- Project Name -->
-        <div class="">
-          <label for="title">Project Name</label>
-          <input type="text" class="form-control bs-1" id="title" />
-        </div>
-        <!-- Description -->
-        <div class="">
-          <label for="description">Description</label>
-          <textarea
-            class="form-control bs-1"
-            id="description"
-            style="height: 150px"
-          ></textarea>
-        </div>
-        <!-- Upload File -->
-        <div class="input-group mb-3">
-          <input type="file" class="form-control bs-1" id="upload" />
-          <label class="input-group-text bs-1" for="upload">Upload</label>
-        </div>
-        <!-- Submit Button -->
-        <div class="d-flex justify-content-end">
-          <button
-            type="submit"
-            onclick="addProject(event);"
-            class="btn btn-warning text-light rounded-pill"
-          >
-            Post Blog
-          </button>
+      <div class="card card mb-3">
+        <img
+          src="assets/images/code.jpg"
+          class="img-card card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">
+            This is a wider card with supporting text below as a natural lead-in
+            to additional content. This content is a little bit longer.
+          </p>
         </div>
       </div>
     </div>
-
-    <!-- My Blog -->
-    <div class="">
-      <h1 class="text-center">MY BLOG</h1>
-      <div class="container">
-        <div class="d-flex row row-gap-3" id="project">
-
-        </div>
-      </div>
-    </div>
-
-    <script src="assets/js/blog.js"></script>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script
-      src="https://kit.fontawesome.com/ebda1b5b9f.js"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
