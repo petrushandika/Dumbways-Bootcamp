@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dumbways</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
-    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
   </head>
   <body>
     <!-- Navbar Menu -->
@@ -53,11 +54,22 @@
     <!-- Form Blog -->
     <div class="m-5">
       <h1 class="text-center fs-2">ADD MY BLOG</h1>
-      <div class="d-flex flex-column gap-4">
+      <div class="d-flex flex-column gap-4" id="form">
         <!-- Project Name -->
         <div class="">
           <label for="title">Project Name</label>
           <input type="text" class="form-control bs-1" id="title" />
+        </div>
+        <!-- Date -->
+        <div class="d-flex gap-3" id="date">
+          <div class="w-100">
+            <label for="start">Start Date</label>
+            <input type="date" class="form-control bs-1" id="start" />
+          </div>
+          <div class="w-100">
+            <label for="end">End Date</label>
+            <input type="date" class="form-control bs-1" id="end" />
+          </div>
         </div>
         <!-- Description -->
         <div class="">
@@ -68,20 +80,41 @@
             style="height: 150px"
           ></textarea>
         </div>
+        <!-- Technologies -->
+        <div class="">
+          <label for="technologies">Technologies</label>
+          <div class="d-flex gap-5">
+            <div class="">
+              <div class="">
+                <input type="checkbox" id="node" class="programming" />
+                <label for="node">Node JS</label>
+              </div>
+              <div class="">
+                <input type="checkbox" id="react" class="programming" />
+                <label for="react">React JS</label>
+              </div>
+            </div>
+            <div class="">
+              <div class="">
+                <input type="checkbox" id="vue" class="programming" />
+                <label for="vue">Vue JS</label>
+              </div>
+              <div class="">
+                <input type="checkbox" id="golang" class="programming" />
+                <label for="golang">Golang</label>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- Upload File -->
         <div class="input-group mb-3">
-          <input
-            type="file"
-            class="form-control bs-1"
-            id="upload"
-          />
-          <label class="input-group-text bs-1" for="upload"
-            >Upload</label
-          >
+          <input type="file" class="form-control bs-1" id="upload" />
+          <label class="input-group-text bs-1" for="upload">Upload</label>
         </div>
         <!-- Submit Button -->
         <div class="d-flex justify-content-end">
-          <button type="submit"
+          <button
+            type="submit"
             onclick="addProject(event);"
             class="btn btn-warning text-light rounded-pill"
           >
@@ -92,11 +125,11 @@
     </div>
 
     <!-- My Blog -->
-    <div class="m-5">
-      <h1 class="text-center fs-2">MY BLOG</h1>
+    <div class="">
+      <h1 class="text-center">MY BLOG</h1>
       <div class="container">
-        <div class="row align-items-center mt-5 row-gap-5" id="project">
-          
+        <div class="d-flex row row-gap-3" id="project">
+
         </div>
       </div>
     </div>

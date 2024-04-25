@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dumbways</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet"">
   </head>
   <body>
@@ -52,10 +53,10 @@
 
     <!-- Home -->
     <div class="p-5">
-      <div class="d-flex bs-1 p-5 rounded">
-        <div class="">
+      <div class="d-flex bs-1 p-5 rounded" id="home">
+        <div class="container">
           <!-- profile -->
-          <div class="">
+          <div class="" id="profile">
             <h2>Hi Welcome to my hut</h2>
             <p>
               I am an enthusiastic student at Gunadarma University, majoring in
@@ -66,7 +67,7 @@
               academic curriculum and am committed to continuous learning and
               growth in these areas.
             </p>
-            <div class="d-flex align-items-center gap-2 my-5">
+            <div class="d-flex align-items-center gap-2 my-5" id="contact">
               <button class="btn text-light bg-black rounded-pill w-2">
                 <a class="text-decoration-none text-light" href="#contact"
                   >Contact</a
@@ -79,7 +80,7 @@
             </div>
           </div>
           <!-- Social Media -->
-          <div class="d-flex gap-4 w-100" id="">
+          <div class="d-flex gap-4 w-100" id="social-media">
             <a href="https://www.linkedin.com/in/petrushandika/"
               ><i class="fa-brands fa-linkedin-in text-black fs-3"></i
             ></a>
@@ -96,17 +97,16 @@
         </div>
 
         <!-- Card -->
-        <div class="card w-50 bs-1 text-center" style="width: 18rem">
-          <img
-            src="assets/images/profiles.jpg"
-            class="card-img-top"
-            alt="profile"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Petrus Handika</h5>
-            <p class="card-text">Fullstack Developer</p>
+        <div class="d-flex align-items-center" id="card">
+          <div class="card text-center mw-1 bs-1" style="width: 18rem;">
+            <img src="assets/images/profiles.jpg" class="card-img-top" alt="profile" />
+            <div class="card-body">
+              <h5 class="card-title">Petrus Handika</h5>
+              <p class="card-text">Fullstack Developer</p>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
 
