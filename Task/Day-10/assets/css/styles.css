@@ -53,3 +53,8 @@
 .bg-warning {
     background-color: orangered;
 }
+
+.mw-1 {
+    width: 100%;
+    max-width: 350px;
+}

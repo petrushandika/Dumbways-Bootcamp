@@ -10,7 +10,7 @@ function addProject(event) {
   const language = document.querySelectorAll(".programming");
   const node = document.getElementById("node").checked;
   const react = document.getElementById("react").checked;
-  const vue = document.getElementById("vue").checked;
+  const angular = document.getElementById("angular").checked;
   const golang = document.getElementById("golang").checked;
   const upload = document.getElementById("upload").files[0];
   const imageURL = URL.createObjectURL(upload);
@@ -66,7 +66,7 @@ function addProject(event) {
     description: description,
     node: node,
     react: react,
-    vue: vue,
+    angular: angular,
     golang: golang,
     upload: imageURL,
     duration: duration,
@@ -85,7 +85,7 @@ function newData() {
 
     let nodeImage = "",
       reactImage = "",
-      vueImage = "",
+      angularImage = "",
       golangImage = "";
 
     if (project.node == true) {
@@ -94,8 +94,8 @@ function newData() {
     if (project.react == true) {
       reactImage = '<img src="assets/images/react.svg">';
     }
-    if (project.vue == true) {
-      vueImage = '<img src="assets/images/vuejs.svg">';
+    if (project.angular == true) {
+      angularImage = '<img src="assets/images/angular.svg">';
     }
     if (project.golang == true) {
       golangImage = '<img src="assets/images/golang.svg">';
@@ -120,7 +120,7 @@ function newData() {
         <div class="w-0 d-flex gap-3 my-3">
           ${nodeImage}
           ${reactImage}
-          ${vueImage}
+          ${angularImage}
           ${golangImage}
         </div>
         <div class="d-flex gap-2">
