@@ -41,8 +41,10 @@
               <a class="nav-link fw-semibold" href="blog.html">Blog</a>
             </li>
           </ul>
-          <button class="btn text-light bg-warning rounded-pill " type="submit">
-            <a href="contact.html" class="text-decoration-none text-light">Contact Me</a>
+          <button class="btn text-light bg-warning rounded-pill" type="submit">
+            <a href="contact.html" class="text-decoration-none text-light"
+              >Contact Me</a
+            >
           </button>
         </div>
       </div>
@@ -51,26 +53,30 @@
     <!-- Contact -->
     <div class="m-5">
       <h1 class="text-center">GET IN TOUCH</h1>
-      <div class="d-flex flex-column gap-3">
+      <form method="POST" class="d-flex flex-column gap-3">
         <!-- Name -->
         <div class="">
           <label for="name">Name</label>
-          <input type="text" class="form-control bs-1" />
+          <input type="text" class="item form-control bs-1" id="name" />
         </div>
         <!-- Email -->
         <div class="">
-          <label for="emial">Email</label>
-          <input type="email" class="form-control bs-1" />
+          <label for="email">Email</label>
+          <input type="email" class="item form-control bs-1" id="email" />
         </div>
         <!-- Phone Number -->
         <div class="">
           <label for="phone">Phone Number</label>
-          <input type="text" class="form-control bs-1" />
+          <input type="text" class="item form-control bs-1" id="phone" />
         </div>
         <!-- Subject -->
         <div class="">
           <label for="subject">Subject</label>
-          <select class="form-select bs-1"" aria-label="Default select example">
+          <select
+            class="item form-select bs-1"
+            id="subject"
+            aria-label="Default select example"
+          >
             <option value="1" selected>Fullstack</option>
             <option value="2">Frontend</option>
             <option value="3">Backend</option>
@@ -78,16 +84,22 @@
         </div>
         <!-- Message -->
         <div class="">
-            <label for="message">Message</label>
-          <textarea class="form-control bs-1" style="height: 150px"></textarea>
+          <label for="message">Message</label>
+          <textarea
+            class="item form-control bs-1"
+            style="height: 150px"
+            id="message"
+          ></textarea>
         </div>
         <!-- Submit Button -->
         <div class="d-flex justify-content-end">
-            <button class="btn btn-warning text-light rounded-pill">Submit</button>
-          </div>
-      </div>
+          <button class="btn btn-warning text-light rounded-pill">
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
-
+    <script src="assets/js/contact.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script
       src="https://kit.fontawesome.com/ebda1b5b9f.js"
