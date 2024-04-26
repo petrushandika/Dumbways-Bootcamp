@@ -1,0 +1,44 @@
+@media only screen and (max-width: 1024px) {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #home {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #profile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #contact {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #social-media {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-bottom: 3rem;
+    }
+
+    #card {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #date {
+        display: flex;
+        flex-direction: column;
+    }
+}

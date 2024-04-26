@@ -1,0 +1,60 @@
+.w-0 {
+    width: 25px;
+}
+
+.w-1 {
+    width: 50px;
+}
+
+.w-2 {
+    width: 100px;
+}
+
+.w-3 {
+    width: 150px;
+}
+
+.w-4 {
+    width: 200px;
+}
+
+.w-5 {
+    width: 250px;
+}
+
+.h-1 {
+    height: 50px;
+}
+
+.h-2 {
+    height: 75px;
+}
+
+.h-3 {
+    height: 100px;
+}
+
+.h-3 {
+    height: 125px;
+}
+
+.h-4 {
+    height: 150px;
+}
+
+.h-5 {
+    height: 175px;
+}
+
+.bs-1 {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.bg-warning {
+    background-color: orangered;
+}
+
+.mw-1 {
+    width: 100%;
+    max-width: 350px;
+}
