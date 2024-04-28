@@ -3,30 +3,36 @@ const dataProject = [];
 function addProject(event) {
   event.preventDefault();
 
-  const title = document.getElementById("title").value;
+  const name = document.getElementById("name").value;
   const start = document.getElementById("start").value;
   const end = document.getElementById("end").value;
   const description = document.getElementById("description").value;
-  const language = document.querySelectorAll(".programming");
+  const languages = document.querySelectorAll(".programming");
   const node = document.getElementById("node").checked;
   const react = document.getElementById("react").checked;
-  const angular = document.getElementById("angular").checked;
+  const vue = document.getElementById("vue").checked;
   const golang = document.getElementById("golang").checked;
   const upload = document.getElementById("upload").files[0];
   const imageURL = URL.createObjectURL(upload);
 
-  if (title === "") {
-    return alert("Please write your title project!");
+  if (name === "") {
+    alert("Please Write Your Project Name!");
+    return;
   } else if (start === "") {
-    return alert("Please choose your start date!");
+    alert("Please Write Your Start Date Project!");
+    return;
   } else if (end === "") {
-    return alert("Please choose your end date!");
+    alert("Please Write Your End Date Project!");
+    return;
   } else if (description === "") {
-    return alert("Please write your description project!");
-  } else if (language.length === "") {
-    return alert("Please select your programming language project!");
+    alert("Please Write Your Description Project!");
+    return;
+  } else if (languages.length === 0) {
+    alert("Please Select Your Programming Language Project!");
+    return;
   } else if (!imageURL) {
-    return alert("Please upload your image project!");
+    alert("Please Upload Your Image Project!");
+    return;
   }
 
   if (start > end) {
@@ -59,14 +65,18 @@ function addProject(event) {
     duration = `${diffDays} Days`;
   }
 
+  // const selectedLanguages = Array.from(languages).map(
+  //   (language) => language.value
+  // );
+
   dataProject.push({
-    title: title,
+    title: name,
     startDate: start,
     endDate: end,
     description: description,
-    node: node,
-    react: react,
-    angular: angular,
+    nodeJs: node,
+    reactJs: react,
+    vueJs: vue,
     golang: golang,
     upload: imageURL,
     duration: duration,
@@ -82,10 +92,9 @@ function newData() {
 
   for (let i = 0; i < dataProject.length; i++) {
     const project = dataProject[i];
-
     let nodeImage = "",
       reactImage = "",
-      angularImage = "",
+      vueImage = "",
       golangImage = "";
 
     if (project.node == true) {
@@ -94,42 +103,61 @@ function newData() {
     if (project.react == true) {
       reactImage = '<img src="assets/images/react.svg">';
     }
-    if (project.angular == true) {
-      angularImage = '<img src="assets/images/angular.svg">';
+    if (project.vue == true) {
+      vueImage = '<img src="assets/images/vuejs.svg">';
     }
     if (project.golang == true) {
       golangImage = '<img src="assets/images/golang.svg">';
     }
 
     document.getElementById("project").innerHTML += `
-    <div class="col">
-    <div class="card" style="width: 18rem">
-      <img
-        src="${project.upload}"
-        class="card-img-top h-5"
-        alt="..."
-      />
-      <div class="card-body">
-        <div class="d-flex flex-column">
-          <h5 class="card-title">${project.title}</h5>
-          <span>Duration: ${project.duration}</span>
-        </div>
-        <p class="card-text">
+    <div
+    class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
+  >
+    <div class="card-image w-100">
+      <a href="detail-project.html">
+        <img
+          src="${project.upload}"
+          alt="mobile"
+          class="w-100 h-8 mt-3 rounded-1"
+        />
+      </a>
+    </div>
+    <div class="item w-100">
+      <a
+        href="detail-project.html"
+        class="text-decoration-none text-black"
+      >
+        <div class="description">
+          <div class="heading">
+            <h3 class="fs-5 mt-3">${project.title}</h3>
+            <span class="time">${project.duration}</span>
+          </div>
+          <p>
           ${project.description}
-        </p>
-        <div class="w-0 d-flex gap-3 my-3">
-          ${nodeImage}
-          ${reactImage}
-          ${angularImage}
-          ${golangImage}
+          </p>
         </div>
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-secondary w-100">Edit</a>
-          <a href="#" class="btn btn-secondary w-100">Delete</a>
-        </div>
+      </a>
+      <div class="language mb-3 d-flex gap-3">
+      ${nodeImage}
+      ${reactImage}
+      ${vueImage}
+      ${golangImage}
+      </div>
+      <div class="button-field pb-3 d-flex gap-1">
+        <button
+          class="btn w-100 bg-black text-light border-none rounded-1"
+        >
+          Edit
+        </button>
+        <button
+          class="btn w-100 bg-black text-light border-none rounded-1"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>
-    `;
+        `;
   }
 }

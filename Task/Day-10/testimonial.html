@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/responsive-bootstrap.css" />
+    <title>My Testimonials</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="project.html">My Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="testimonial.html"
+                >Testimonials</a
+              >
+            </li>
+          </ul>
+          <button class="btn bg-orange text-light">
+            <a href="contact.html" class="text-decoration-none text-light"
+              >Contact</a
+            >
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Testimonials -->
+    <div class="testimonial bg-aliceblue py-5">
+      <div class="rating">
+        <h2 class="text-center fs-3 fw-semibold">Rating Testimonials</h2>
+        <div class="rating-star container d-flex justify-content-between align-items-center my-5">
+          <button onclick="allTestimonial()" class="rate btn bg-info text-light">ALL</button>
+          <button onclick="ratingTestimonial(1)" class="rate btn bg-info text-light">
+            1<i class="fa-solid fa-star ms-1"></i>
+          </button>
+          <button onclick="ratingTestimonial(2)" class="rate btn bg-info text-light">
+            2<i class="fa-solid fa-star ms-1"></i>
+          </button>
+          <button onclick="ratingTestimonial(3)" class="rate btn bg-info text-light">
+            3<i class="fa-solid fa-star ms-1"></i>
+          </button>
+          <button onclick="ratingTestimonial(4)" class="rate btn bg-info text-light">
+            4<i class="fa-solid fa-star ms-1"></i>
+          </button>
+          <button onclick="ratingTestimonial(5)" class="rate btn bg-info text-light">
+            5<i class="fa-solid fa-star ms-1"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="grid-content container project-content">
+        <h2 class="myTestimonial text-center fs-3 fw-semibold">
+          My Testimonials
+        </h2>
+        <div
+          class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-5 d-flex justify-content-center align-items-center mt-5"
+          id="testimonial"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script></script>
+    <script src="assets/js/ajax.js"></script>
+  </body>
+</html>

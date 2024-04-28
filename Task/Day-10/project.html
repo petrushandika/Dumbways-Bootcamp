@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/css/responsive-bootstrap.css" />
+
+    <!-- Title -->
+    <title>My Project</title>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="project.html">My Project</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="testimonial.html"
+                >Testimonials</a
+              >
+            </li>
+          </ul>
+          <button class="btn bg-orange text-light">
+            <a href="contact.html" class="text-decoration-none text-light"
+              >Contact</a
+            >
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Project Form -->
+    <div class="project bg-aliceblue py-5">
+      <h2 class="text-center fs-3 fw-semibold">ADD MY PROJECT</h2>
+      <form
+        action="#"
+        class="container d-flex flex-column gap-3 justify-content-center align-items-center w-100 mw-3 h-auto"
+      >
+        <!-- Project Name -->
+        <div class="input-field field w-100 d-flex flex-column">
+          <label for="name" class="fw-medium">Project Name</label>
+          <input
+            type="text"
+            id="name"
+            class="rounded-1 border-none outline-none p-1 px-2 b-s"
+          />
+        </div>
+
+        <!-- Project Dates -->
+        <div class="input-field field w-100">
+          <div class="date-time d-flex gap-2">
+            <div class="date w-100 d-flex flex-column">
+              <label for="start" class="fw-medium">Start Date</label>
+              <input
+                type="date"
+                id="start"
+                class="rounded-1 border-none outline-none p-1 px-2 b-s"
+              />
+            </div>
+            <div class="date w-100 d-flex flex-column">
+              <label for="end" class="fw-medium">End Date</label>
+              <input
+                type="date"
+                id="end"
+                class="rounded-1 border-none outline-none p-1 px-2 b-s"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Project Description -->
+        <div class="textarea-field field w-100 d-flex flex-column">
+          <label for="description" class="fw-medium">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            class="rounded-1 border-none outline-none p-1 px-2 resize-none h-5 b-s"
+          ></textarea>
+        </div>
+
+        <!-- Technologies Selection -->
+        <div class="checkbox-field field w-100">
+          <label class="fw-medium">Technologies</label>
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="flex-container row row-cols-2">
+                <div class="col">
+                  <input type="checkbox" id="node" />
+                  <label for="node">Node.js</label>
+                </div>
+                <div class="col">
+                  <input type="checkbox" id="react" />
+                  <label for="react">React.js</label>
+                </div>
+                <div class="col">
+                  <input type="checkbox" id="vue" />
+                  <label for="vue">Vue.js</label>
+                </div>
+                <div class="col">
+                  <input type="checkbox" id="golang" />
+                  <label for="golang">Golang</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Field -->
+        <div class="input-field w-100 d-flex flex-column">
+          <label for="upload" class="fw-medium">Upload Image</label>
+          <input type="file" id="upload" class="bg-white rounded-1 b-s" />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="submit-field w-100 d-flex justify-content-end">
+          <button
+            type="submit"
+            onclick="addProject(event)"
+            class="btn border-none bg-white fw-semibold"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Projects Content -->
+    <div class="content container project-content py-5">
+      <h2 class="text-center fs-3 fw-semibold">MY PROJECT</h2>
+      <div
+        class="grid-content row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-5 d-flex justify-content-center align-items-center mt-5"
+        id="project"
+      >
+        <!-- Project Card -->
+        <div
+          class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
+        >
+          <div class="card-image w-100">
+            <a href="detail-project.html">
+              <img
+                src="assets/images/mobile.png"
+                alt="Mobile"
+                class="w-100 h-8 mt-3 rounded-1"
+              />
+            </a>
+          </div>
+          <div class="item w-100">
+            <a
+              href="detail-project.html"
+              class="text-decoration-none text-black"
+            >
+              <div class="description">
+                <div class="heading">
+                  <h3 class="fs-5 mt-3">Dumbways Web App - 2024</h3>
+                  <span class="time">Duration: 3 Months</span>
+                </div>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Soluta qui dignissimos beatae fugit, quod ratione sit.
+                </p>
+              </div>
+            </a>
+            <div class="language mb-3 d-flex gap-3">
+              <i class="fa-brands fa-html5 fs-1"></i>
+              <i class="fa-brands fa-css3-alt fs-1"></i>
+              <i class="fa-brands fa-java fs-1"></i>
+            </div>
+            <div class="button-field pb-3 d-flex gap-1">
+              <button
+                class="btn w-100 bg-black text-light border-none rounded-1"
+              >
+                Edit
+              </button>
+              <button
+                class="btn w-100 bg-black text-light border-none rounded-1"
+              >
+                Delete
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/project.js"></script>
+  </body>
+</html>

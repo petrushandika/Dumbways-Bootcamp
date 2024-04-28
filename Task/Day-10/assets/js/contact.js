@@ -32,70 +32,65 @@ function sendEmail() {
 }
 
 function checkInputs() {
-  const items = document.querySelectorAll(".item");
+    const items = document.querySelectorAll(".item");
 
-  for (const item of items) {
-    if (item.value == "") {
-      item.classList.add("error");
-      item.parentElement.classList.add("error");
+    for (const item of items) {
+        if (item.value == "") {
+            item.classList.add("error");
+            item.parentElement.classList.add("error");
+        }
+
+        if (items[1].value != "") {
+            checkEmail();
+        }
+
+        items[1].addEventListener("keyup", () => {
+            checkEmail();
+        })
+        
+        item.addEventListener("keyup", () => {
+            if (item.value != "") {
+                item.classList.remove("error");
+                item.parentElement.classList.add("error");
+            } else {
+                item.classList.add("error");
+                item.parentElement.classList.add("error");
+            }
+        })
     }
-
-    if (items[1].value != "") {
-      checkEmail();
-    }
-
-    items[1].addEventListener("keyup", () => {
-      checkEmail();
-    });
-
-    item.addEventListener("keyup", () => {
-      if (item.value != "") {
-        item.classList.add("error");
-        item.parentElement.classList.add("error");
-      } else {
-        item.classList.add("error");
-        item.parentElement.classList.add("error");
-      }
-    });
-  }
 }
 
 function checkEmail() {
-  const emailRegex = /^([a-z\d\.-]+)@([a-z\d]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+    const emailRegex = /^([a-z\d\.-]+)@([a-z\d]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
 
-  const errorTextEmail = document.querySelector(".error-text.email");
+    const errorTextEmail = document.querySelector(".error-text.email");
 
-  if (!email.value.match(emailRegex)) {
-    email.classList.add("error");
-    email.parentElement.classList.add("error");
+    if(!email.value.match(emailRegex)) {
+        email.classList.add("error");
+        email.parentElement.classList.add("error");
 
-    if (email.value != "") {
-      errorTextEmail.innerText = "Enter a valid email address";
+        if (email.value != "") {
+            errorTextEmail.innerText = "Enter a valid email address"
+        } else {
+            errorTextEmail.innerText = "Please enter your Email Address";
+        }
+
     } else {
-      errorTextEmail.innerText = "Please enter your Email Address";
+        email.classList.remove("error");
+        email.parentElement.classList.remove("error");
     }
-  } else {
-    email.classList.remove("error");
-    email.parentElement.classList.remove("error");
-  }
 }
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  checkInputs();
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    checkInputs();
 
-  if (
-    !fullname.classList.contains("error") &&
-    !email.classList.contains("error") &&
-    !phone.classList.contains("error") &&
-    !subject.classList.contains("error") &&
-    !mess.classList.contains("error")
-  ) {
-    console.log("OK");
-  }
+    if(!fullname.classList.contains("error") && !email.classList.contains("error") && !phone.classList.contains("error") && !subject.classList.contains("error") && !mess.classList.contains("error")) {
+        console.log("OK");
+    };
+    
+    sendEmail();
 
-  sendEmail();
-
-  form.reset();
-  return false;
+    form.reset();
+    return false;
 });
