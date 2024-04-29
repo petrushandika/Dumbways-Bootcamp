@@ -34,7 +34,7 @@ function renderTestimonialData(url) {
               class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
             >
               <div class="card-image w-100">
-                <a href="detail-project.html">
+                <a href="detail-blog.html">
                   <img
                     src="${testimonial.image}"
                     class="w-100 h-auto mt-3 rounded-1"
@@ -43,7 +43,7 @@ function renderTestimonialData(url) {
               </div>
               <div class="item w-100">
                 <a
-                  href="detail-project.html"
+                  href="detail-blog.html"
                   class="text-decoration-none text-black"
                 >
                   <div class="description">
@@ -88,7 +88,7 @@ function renderTestimonialData(url) {
         class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
       >
         <div class="card-image w-100">
-          <a href="detail-project.html">
+          <a href="detail-blog.html">
             <img
               src="${testimonial.image}"
               class="w-100 h-auto mt-3 rounded-1"
@@ -97,7 +97,7 @@ function renderTestimonialData(url) {
         </div>
         <div class="item w-100">
           <a
-            href="detail-project.html"
+            href="detail-blog.html"
             class="text-decoration-none text-black"
           >
             <div class="description">

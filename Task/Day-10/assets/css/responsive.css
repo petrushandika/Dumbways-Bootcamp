@@ -87,7 +87,7 @@
     align-items: center;
   }
 
-  .project {
+  .blog {
     padding: 0 25px;
   }
 
@@ -100,7 +100,7 @@
     width: 30%;
   }
 
-  .project-content {
+  .blog-content {
     margin: 0;
     padding: 0;
   }

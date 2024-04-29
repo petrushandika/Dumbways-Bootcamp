@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="assets/css/responsive-bootstrap.css" />
 
     <!-- Title -->
-    <title>My Project</title>
+    <title>My Blog</title>
   </head>
   <body>
     <!-- Navbar -->
@@ -36,7 +36,7 @@
               <a class="nav-link fw-semibold" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="project.html">My Project</a>
+              <a class="nav-link fw-semibold" href="blog.html">My Blog</a>
             </li>
             <li class="nav-item">
               <a class="nav-link fw-semibold" href="testimonial.html"
@@ -53,16 +53,16 @@
       </div>
     </nav>
 
-    <!-- Project Form -->
-    <div class="project bg-aliceblue py-5">
-      <h2 class="text-center fs-3 fw-semibold">ADD MY PROJECT</h2>
+    <!-- Blog Form -->
+    <div class="blog bg-aliceblue py-5">
+      <h2 class="text-center fs-3 fw-semibold">ADD MY BLOG</h2>
       <form
         action="#"
         class="container d-flex flex-column gap-3 justify-content-center align-items-center w-100 mw-3 h-auto"
       >
-        <!-- Project Name -->
+        <!-- Blog Name -->
         <div class="input-field field w-100 d-flex flex-column">
-          <label for="name" class="fw-medium">Project Name</label>
+          <label for="name" class="fw-medium">Blog Name</label>
           <input
             type="text"
             id="name"
@@ -70,7 +70,7 @@
           />
         </div>
 
-        <!-- Project Dates -->
+        <!-- Blog Dates -->
         <div class="input-field field w-100">
           <div class="date-time d-flex gap-2">
             <div class="date w-100 d-flex flex-column">
@@ -92,7 +92,7 @@
           </div>
         </div>
 
-        <!-- Project Description -->
+        <!-- Blog Description -->
         <div class="textarea-field field w-100 d-flex flex-column">
           <label for="description" class="fw-medium">Description</label>
           <textarea
@@ -109,19 +109,19 @@
             <div class="grid-item">
               <div class="flex-container row row-cols-2">
                 <div class="col">
-                  <input type="checkbox" id="node" />
+                  <input type="checkbox" id="node" class="programming" />
                   <label for="node">Node.js</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="react" />
+                  <input type="checkbox" id="react" class="programming" />
                   <label for="react">React.js</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="vue" />
-                  <label for="vue">Vue.js</label>
+                  <input type="checkbox" id="angular" class="programming" />
+                  <label for="angular">Angular</label>
                 </div>
                 <div class="col">
-                  <input type="checkbox" id="golang" />
+                  <input type="checkbox" id="golang" class="programming" />
                   <label for="golang">Golang</label>
                 </div>
               </div>
@@ -139,7 +139,7 @@
         <div class="submit-field w-100 d-flex justify-content-end">
           <button
             type="submit"
-            onclick="addProject(event)"
+            onclick="addBlog(event)"
             class="btn border-none bg-white fw-semibold"
           >
             Submit
@@ -148,19 +148,19 @@
       </form>
     </div>
 
-    <!-- Projects Content -->
-    <div class="content container project-content py-5">
-      <h2 class="text-center fs-3 fw-semibold">MY PROJECT</h2>
+    <!-- Blogs Content -->
+    <div class="content container blog-content py-5">
+      <h2 class="text-center fs-3 fw-semibold">MY BLOG</h2>
       <div
         class="grid-content row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-5 d-flex justify-content-center align-items-center mt-5"
-        id="project"
+        id="blog"
       >
-        <!-- Project Card -->
+        <!-- Blog Card -->
         <div
           class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
         >
           <div class="card-image w-100">
-            <a href="detail-project.html">
+            <a href="detail-blog.html">
               <img
                 src="assets/images/mobile.png"
                 alt="Mobile"
@@ -170,7 +170,7 @@
           </div>
           <div class="item w-100">
             <a
-              href="detail-project.html"
+              href="detail-blog.html"
               class="text-decoration-none text-black"
             >
               <div class="description">
@@ -212,6 +212,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/js/project.js"></script>
+    <script src="assets/js/blog.js"></script>
   </body>
 </html>

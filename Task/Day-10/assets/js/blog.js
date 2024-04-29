@@ -1,6 +1,6 @@
-const dataProject = [];
+const dataBlog = [];
 
-function addProject(event) {
+function addBlog(event) {
   event.preventDefault();
 
   const name = document.getElementById("name").value;
@@ -10,28 +10,28 @@ function addProject(event) {
   const languages = document.querySelectorAll(".programming");
   const node = document.getElementById("node").checked;
   const react = document.getElementById("react").checked;
-  const vue = document.getElementById("vue").checked;
+  const angular = document.getElementById("angular").checked;
   const golang = document.getElementById("golang").checked;
   const upload = document.getElementById("upload").files[0];
   const imageURL = URL.createObjectURL(upload);
 
   if (name === "") {
-    alert("Please Write Your Project Name!");
+    alert("Please Write Your Blog Name!");
     return;
   } else if (start === "") {
-    alert("Please Write Your Start Date Project!");
+    alert("Please Write Your Start Date Blog!");
     return;
   } else if (end === "") {
-    alert("Please Write Your End Date Project!");
+    alert("Please Write Your End Date Blog!");
     return;
   } else if (description === "") {
-    alert("Please Write Your Description Project!");
+    alert("Please Write Your Description Blog!");
     return;
   } else if (languages.length === 0) {
-    alert("Please Select Your Programming Language Project!");
+    alert("Please Select Your Programming Language Blog!");
     return;
   } else if (!imageURL) {
-    alert("Please Upload Your Image Project!");
+    alert("Please Upload Your Image Blog!");
     return;
   }
 
@@ -69,55 +69,55 @@ function addProject(event) {
   //   (language) => language.value
   // );
 
-  dataProject.push({
+  dataBlog.push({
     title: name,
     startDate: start,
     endDate: end,
     description: description,
-    nodeJs: node,
-    reactJs: react,
-    vueJs: vue,
+    node: node,
+    react: react,
+    angular: angular,
     golang: golang,
     upload: imageURL,
     duration: duration,
   });
 
-  console.log(dataProject);
+  console.log(dataBlog);
 
   newData();
 }
 
 function newData() {
-  document.getElementById("project").innerHTML = "";
+  document.getElementById("blog").innerHTML = "";
 
-  for (let i = 0; i < dataProject.length; i++) {
-    const project = dataProject[i];
+  for (let i = 0; i < dataBlog.length; i++) {
+    const blog = dataBlog[i];
     let nodeImage = "",
       reactImage = "",
-      vueImage = "",
+      angularImage = "",
       golangImage = "";
 
-    if (project.node == true) {
-      nodeImage = '<img src="assets/images/node.svg">';
+    if (blog.node == true) {
+      nodeImage = '<img src="assets/images/node.svg" class="icon-small">';
     }
-    if (project.react == true) {
-      reactImage = '<img src="assets/images/react.svg">';
+    if (blog.react == true) {
+      reactImage = '<img src="assets/images/react.svg" class="icon-small">';
     }
-    if (project.vue == true) {
-      vueImage = '<img src="assets/images/vuejs.svg">';
+    if (blog.angular == true) {
+      angularImage = '<img src="assets/images/angular.svg" class="icon-small">';
     }
-    if (project.golang == true) {
-      golangImage = '<img src="assets/images/golang.svg">';
+    if (blog.golang == true) {
+      golangImage = '<img src="assets/images/golang.svg" class="icon-small">';
     }
 
-    document.getElementById("project").innerHTML += `
+    document.getElementById("blog").innerHTML += `
     <div
     class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
   >
     <div class="card-image w-100">
-      <a href="detail-project.html">
+      <a href="detail-blog.html">
         <img
-          src="${project.upload}"
+          src="${blog.upload}"
           alt="mobile"
           class="w-100 h-8 mt-3 rounded-1"
         />
@@ -125,23 +125,23 @@ function newData() {
     </div>
     <div class="item w-100">
       <a
-        href="detail-project.html"
+        href="detail-blog.html"
         class="text-decoration-none text-black"
       >
         <div class="description">
           <div class="heading">
-            <h3 class="fs-5 mt-3">${project.title}</h3>
-            <span class="time">${project.duration}</span>
+            <h3 class="fs-5 mt-3">${blog.title}</h3>
+            <span class="time">${blog.duration}</span>
           </div>
           <p>
-          ${project.description}
+          ${blog.description}
           </p>
         </div>
       </a>
       <div class="language mb-3 d-flex gap-3">
       ${nodeImage}
       ${reactImage}
-      ${vueImage}
+      ${angularImage}
       ${golangImage}
       </div>
       <div class="button-field pb-3 d-flex gap-1">

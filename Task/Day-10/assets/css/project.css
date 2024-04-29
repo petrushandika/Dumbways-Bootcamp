@@ -12,7 +12,7 @@ body {
   height: fit-content;
 }
 
-.project {
+.blog {
   margin: 75px 0;
   background-color: aliceblue;
   height: fit-content;
@@ -22,7 +22,7 @@ body {
   align-items: center;
 }
 
-.project h2 {
+.blog h2 {
   text-align: center;
   padding: 50px 0 25px 0;
   font-size: 1.75em;
