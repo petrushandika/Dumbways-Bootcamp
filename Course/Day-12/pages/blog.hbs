@@ -1,0 +1,98 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dumbways</title>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Navbar Menu -->
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid mx-5 text-center">
+        <img
+          src="../assets/images/dumbways.png"
+          class="navbar-brand w-1"
+          href="#"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active fw-semibold mx-2"
+                aria-current="page"
+                href="/"
+              >Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold" href="blog">Blog</a>
+            </li>
+          </ul>
+          <button class="btn text-light bg-warning rounded-pill" type="submit">
+            <a href="contact" class="text-decoration-none text-light">Contact Me</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- My Blog -->
+    <div class="">
+      <h1 class="text-center fs-2 mt-5">MY BLOG</h1>
+      <div class="d-flex justify-content-end m-5 mb-5">
+        <button class="btn btn-warning text-light h-25 rounded-pill">
+          <a href="add-blog" class="text-decoration-none text-light">Add New
+            Blog</a>
+        </button>
+      </div>
+      <div class="container">
+        <div class="d-flex row row-gap-3" id="project">
+          {{#each data}}
+            <div class="col">
+              <div class="card" style="width: 18rem">
+                <img src="{{image}}" alt="any" />
+                <div class="card-body">
+                  <h5 class="card-title">{{title}}</h5>
+                  <p class="card-text">{{description}}</p>
+                  <form
+                    method="POST"
+                    action="/delete-blog/{{@index}}"
+                    class="w-100 d-flex flex-row gap-2"
+                  >
+                    <a
+                      href="/edit-blog/{{@index}}"
+                      class="btn btn-warning text-light w-100"
+                    >Edit</a>
+                    <button
+                      class="btn btn-warning text-light w-100"
+                    >Delete</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+
+    {{!
+    <script src="../assets/js/blog.js"></script>
+    }}
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
