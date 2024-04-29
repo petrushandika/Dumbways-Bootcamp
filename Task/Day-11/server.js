@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const port = 5000;
 const path = require("path");
-const { start } = require("repl");
 
 // app.set = setting variable global, configuration, etc
 app.set("view engine", "hbs");
@@ -20,6 +19,7 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/", home);
 app.get("/blog", blog);
 app.post("/blog", addBlog);
+app.get("/testimonial", testimonial);
 app.get("/contact", contact);
 app.get("/blog-detail/:id", blogDetail);
 
@@ -28,6 +28,10 @@ const data = [];
 // Service
 function home(req, res) {
   res.render("index");
+}
+
+function testimonial(req, res) {
+  res.render("testimonial");
 }
 
 function contact(req, res) {
@@ -39,21 +43,30 @@ function blog(req, res) {
 }
 
 function addBlog(req, res) {
-  const { title, start, end, description, node, react, angular, golang } = req.body;
-  // let prj = req.body
-  // console.log(prj)
-
-  data.push({ 
-    title,
+  const {
+    name,
     start,
     end,
     description,
-    node,
-    react,
-    angular,
-    golang,
+    nodeImage,
+    reactImage,
+    angularImage,
+    golangImage,
+  } = req.body;
+  // let obj = req.body;
+  // console.log(obj);
+
+  data.push({
+    name,
+    start,
+    end,
+    description,
+    nodeImage,
+    reactImage,
+    angularImage,
+    golangImage,
   });
-  res.redirect("blog");
+  res.redirect("/blog");
 }
 
 function blogDetail(req, res) {
@@ -61,7 +74,7 @@ function blogDetail(req, res) {
 
   const data = {
     id,
-    title,
+    name,
     start,
     end,
     description,

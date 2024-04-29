@@ -1,13 +1,13 @@
-const dataProject = [];
+const dataBlog = [];
 
-function addProject(event) {
+function addBlog(event) {
   event.preventDefault();
 
-  const title = document.getElementById("title").value;
+  const name = document.getElementById("name").value;
   const start = document.getElementById("start").value;
   const end = document.getElementById("end").value;
   const description = document.getElementById("description").value;
-  const language = document.querySelectorAll(".programming");
+  const languages = document.querySelectorAll(".programming");
   const node = document.getElementById("node").checked;
   const react = document.getElementById("react").checked;
   const angular = document.getElementById("angular").checked;
@@ -15,18 +15,24 @@ function addProject(event) {
   const upload = document.getElementById("upload").files[0];
   const imageURL = URL.createObjectURL(upload);
 
-  if (title === "") {
-    return alert("Please write your title project!");
+  if (name === "") {
+    alert("Please Write Your Blog Name!");
+    return;
   } else if (start === "") {
-    return alert("Please choose your start date!");
+    alert("Please Write Your Start Date Blog!");
+    return;
   } else if (end === "") {
-    return alert("Please choose your end date!");
+    alert("Please Write Your End Date Blog!");
+    return;
   } else if (description === "") {
-    return alert("Please write your description project!");
-  } else if (language.length === "") {
-    return alert("Please select your programming language project!");
+    alert("Please Write Your Description Blog!");
+    return;
+  } else if (languages.length === 0) {
+    alert("Please Select Your Programming Language Blog!");
+    return;
   } else if (!imageURL) {
-    return alert("Please upload your image project!");
+    alert("Please Upload Your Image Blog!");
+    return;
   }
 
   if (start > end) {
@@ -59,8 +65,12 @@ function addProject(event) {
     duration = `${diffDays} Days`;
   }
 
-  dataProject.push({
-    title: title,
+  // const selectedLanguages = Array.from(languages).map(
+  //   (language) => language.value
+  // );
+
+  dataBlog.push({
+    title: name,
     startDate: start,
     endDate: end,
     description: description,
@@ -72,65 +82,82 @@ function addProject(event) {
     duration: duration,
   });
 
-  console.log(dataProject);
+  console.log(dataBlog);
 
   newData();
 }
 
 function newData() {
-  document.getElementById("project").innerHTML = "";
+  document.getElementById("blog").innerHTML = "";
 
-  // for (let i = 0; i < dataProject.length; i++) {
-    // const project = dataProject[i];
-    dataProject.forEach((project, index) => {
-
+  for (let i = 0; i < dataBlog.length; i++) {
+    const blog = dataBlog[i];
     let nodeImage = "",
       reactImage = "",
       angularImage = "",
       golangImage = "";
 
-    if (project.node == true) {
-      nodeImage = '<img src="assets/images/node.svg">';
+    if (blog.node == true) {
+      nodeImage = '<img src="../assets/images/node.svg" class="icon-small">';
     }
-    if (project.react == true) {
-      reactImage = '<img src="assets/images/react.svg">';
+    if (blog.react == true) {
+      reactImage = '<img src="../assets/images/react.svg" class="icon-small">';
     }
-    if (project.angular == true) {
-      angularImage = '<img src="assets/images/angular.svg">';
+    if (blog.angular == true) {
+      angularImage = '<img src="../assets/images/angular.svg" class="icon-small">';
     }
-    if (project.golang == true) {
-      golangImage = '<img src="assets/images/golang.svg">';
+    if (blog.golang == true) {
+      golangImage = '<img src="../assets/images/golang.svg" class="icon-small">';
     }
 
-    document.getElementById("project").innerHTML += `
-    <div class="col">
-    <div class="card" style="width: 18rem">
-      <img
-        src="${project.upload}"
-        class="card-img-top h-5"
-        alt="..."
-      />
-      <div class="card-body">
-        <div class="d-flex flex-column">
-          <h5 class="card-title">${project.title}</h5>
-          <span>Duration: ${project.duration}</span>
+    document.getElementById("blog").innerHTML += `
+    <div
+    class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
+  >
+    <div class="card-image w-100">
+      <a href="detail-blog.html">
+        <img
+          src="${blog.upload}"
+          alt="mobile"
+          class="w-100 h-8 mt-3 rounded-1"
+        />
+      </a>
+    </div>
+    <div class="item w-100">
+      <a
+        href="detail-blog.html"
+        class="text-decoration-none text-black"
+      >
+        <div class="description">
+          <div class="heading">
+            <h3 class="fs-5 mt-3">${blog.title}</h3>
+            <span class="time">${blog.duration}</span>
+          </div>
+          <p>
+          ${blog.description}
+          </p>
         </div>
-        <p class="card-text">
-          ${project.description}
-        </p>
-        <div class="w-0 d-flex gap-3 my-3">
-          ${nodeImage}
-          ${reactImage}
-          ${angularImage}
-          ${golangImage}
-        </div>
-        <div class="d-flex gap-2">
-          <a href="#" class="btn btn-secondary w-100">Edit</a>
-          <a href="#" class="btn btn-secondary w-100">Delete</a>
-        </div>
+      </a>
+      <div class="language mb-3 d-flex gap-3">
+      ${nodeImage}
+      ${reactImage}
+      ${angularImage}
+      ${golangImage}
+      </div>
+      <div class="button-field pb-3 d-flex gap-1">
+        <button
+          class="btn w-100 bg-black text-light border-none rounded-1"
+        >
+          Edit
+        </button>
+        <button
+          class="btn w-100 bg-black text-light border-none rounded-1"
+        >
+          Delete
+        </button>
       </div>
     </div>
   </div>
-    `;
-  })
+        `;
+  }
 }
