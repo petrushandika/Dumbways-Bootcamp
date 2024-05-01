@@ -62,11 +62,14 @@ function deleteBlog(req, res) {
 }
 
 function editBlog(req, res) {
-  const { title, description, id } = req.body;
+  const { title, description, image, id } = req.body;
 
   data[id] = {
     title,
     description,
+    image:
+      image ||
+      "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg",
   };
 
   res.redirect("/");
