@@ -1,11 +1,12 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = 5000;
-const path = require("path");
 const config = require("./config/config.json");
 const { Sequelize, QueryTypes } = require("sequelize");
 const { Query } = require("pg");
 const sequelize = new Sequelize(config.development);
+const blogModel = require("./models").blog;
 
 // app.set = setting variable global, configuration, etc
 app.set("view engine", "hbs");
@@ -42,18 +43,13 @@ function home(req, res) {
 }
 
 async function blog(req, res) {
-  try {
-    const query = "SELECT * FROM blogs";
-    const data = await sequelize.query(query, { type: QueryTypes.SELECT });
+  const query = "SELECT * FROM blogs";
+  const data = await sequelize.query(query, { type: QueryTypes.SELECT });
 
-    res.render("blog", { data });
-  } catch (error) {
-    console.error("Kesalahan saat mendapatkan data:", error);
-    res.status(500).send("Terjadi kesalahan saat memuat blog.");
-  }
+  res.render("blog", { data });
 }
 
-function addBlog(req, res) {
+async function addBlog(req, res) {
   const {
     image,
     title,
@@ -66,40 +62,61 @@ function addBlog(req, res) {
     golangImage,
   } = req.body;
 
-  const defaultImage =
-    "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg";
+  const query = `INSERT INTO blogs(title, start, "end", nodeimage, reactimage, angularimage, golangimage, image, "createdAt", "updatedAt", description) VALUES ('${title}, '${start}', '${end}', '${nodeImage}', '${reactImage}', '${angularImage}', '${golangImage}', '${image}', now(), now(), '${description}')`;
 
-  const technology = {
-    node: nodeImage || "assets/images/node.svg",
-    react: reactImage || "assets/images/react.svg",
-    angular: angularImage || "assets/images/angular.svg",
-    golang: golangImage || "assets/images/golang.svg",
-  };
+  const data = await sequelize.query(query, { type: QueryTypes.INSERT });
+
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const time = endDate - startDate;
+
+  const days = Math.floor(time / (1000 * 60 * 60 * 24));
+  const months = Math.floor(days / 30);
+  const years = Math.floor(months / 12);
+
+  function duration() {
+    if (days < 30) {
+      return days + " Hari";
+    } else if (months < 12) {
+      return months + " Bulan";
+    } else {
+      return years + " Tahun";
+    }
+  }
 
   data.unshift({
-    image: image || defaultImage,
+    image:
+      image ||
+      "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg",
     title,
     start,
     end,
+    duration: duration(),
+    year: startDate.getFullYear(),
     description,
-    nodeImage: technology.node,
-    reactImage: technology.react,
-    angularImage: technology.angular,
-    golangImage: technology.golang,
+    nodeImage,
+    reactImage,
+    angularImage,
+    golangImage,
   });
 
   res.redirect("/blog");
 }
 
-function deleteBlog(req, res) {
+async function deleteBlog(req, res) {
   const { id } = req.params;
+
+  const query = `DELETE FROM blogs WHERE id=${id}`;
+
+  const data = await sequelize.query(query, { type: QueryTypes.DELETE });
 
   data.splice(id, 1);
   res.redirect("/blog");
 }
 
-function editBlog(req, res) {
+async function editBlog(req, res) {
   const {
+    image,
     title,
     start,
     end,
@@ -111,10 +128,37 @@ function editBlog(req, res) {
     id,
   } = req.body;
 
+  const query = `UPDATE blogs SET image='${image}', title='${title}', start='${start}', end='${end}', description='${description}', node='${nodeImage}', react='${reactImage}', angular='${angularImage}', golang='${golangImage}' WHERE id=${id}`;
+
+  const data = await sequelize.query(query, { type: QueryTypes.UPDATE });
+
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const time = endDate - startDate;
+
+  const days = Math.floor(time / (1000 * 60 * 60 * 24));
+  const months = Math.floor(days / 30);
+  const years = Math.floor(months / 12);
+
+  function duration() {
+    if (days < 30) {
+      return days + " Hari";
+    } else if (months < 12) {
+      return months + " Bulan";
+    } else {
+      return years + " Tahun";
+    }
+  }
+
   data[id] = {
+    image:
+      image ||
+      "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg",
     title,
     start,
     end,
+    duration: duration(),
+    year: startDate.getFullYear(),
     description,
     nodeImage,
     reactImage,
@@ -122,7 +166,9 @@ function editBlog(req, res) {
     golangImage,
   };
 
-  res.redirect("/");
+  const datas = data[id];
+  data.splice(id, 1, datas);
+  res.redirect("/blog");
 }
 
 function addBlogView(req, res) {
@@ -138,20 +184,25 @@ function editBlogView(req, res) {
   res.render("edit-blog", { data: selectedData });
 }
 
-function blogDetail(req, res) {
+async function blogDetail(req, res) {
   const { id } = req.params;
 
-  const data = {
-    id,
-    title,
-    start,
-    end,
-    description,
-    nodeImage,
-    reactImage,
-    angularImage,
-    golangImage,
-  };
+  const query = `SELECT * FROM blogs WHERE id=${id}`;
+  const data = await sequelize.query(query, { type: QueryTypes.SELECT });
+
+  console.log("blog-detail", data[0]);
+
+  // const data = {
+  //   id,
+  //   title,
+  //   start,
+  //   end,
+  //   description,
+  //   nodeImage,
+  //   reactImage,
+  //   angularImage,
+  //   golangImage,
+  // };
 
   res.render("blog-detail", { data: data });
 }

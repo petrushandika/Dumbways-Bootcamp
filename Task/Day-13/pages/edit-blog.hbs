@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-navbar">
       <div class="container-fluid container">
         <a class="navbar-brand" href="#">
           <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
@@ -32,14 +32,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/">Home</a>
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/blog">My Blog</a>
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
             </li>
             <li class="nav-item">
               <a
-                class="nav-link fw-semibold"
+                class="nav-link fw-semibold text-light"
                 href="/testimonial"
               >Testimonials</a>
             </li>
@@ -70,8 +70,9 @@
           <input
             type="text"
             id="title"
+            name="title"
             class="rounded-1 border-none outline-none p-1 px-2 b-s"
-            value="{{data.titles}}"
+            value="{{data.title}}"
           />
         </div>
 
@@ -83,6 +84,7 @@
               <input
                 type="date"
                 id="start"
+                name="start"
                 class="rounded-1 border-none outline-none p-1 px-2 b-s"
                 value="{{data.start}}"
               />
@@ -92,6 +94,7 @@
               <input
                 type="date"
                 id="end"
+                name="end"
                 class="rounded-1 border-none outline-none p-1 px-2 b-s"
                 value="{{data.end}}"
               />
@@ -104,8 +107,8 @@
           <label for="description" class="fw-medium">Description</label>
           <textarea
             id="description"
-            class="rounded-1 border-none outline-none p-1 px-2 resize-none h-5 b-s"
             name="description"
+            class="rounded-1 border-none outline-none p-1 px-2 resize-none h-5 b-s"
           >{{data.description}}</textarea>
         </div>
 
@@ -120,7 +123,11 @@
                     type="checkbox"
                     id="node"
                     class="programming"
-                    value="{{data.nodeImage}}"
+                    value="nodeImage"
+                    name="nodeImage"
+                    {{#if data.nodeImage}}
+                      checked
+                    {{/if}}
                   />
                   <label for="node">Node.js</label>
                 </div>
@@ -129,7 +136,11 @@
                     type="checkbox"
                     id="react"
                     class="programming"
-                    value="{{data.reactImage}}"
+                    value="reactImage"
+                    name="reactImage"
+                    {{#if data.reactImage}}
+                      checked
+                    {{/if}}
                   />
                   <label for="react">React.js</label>
                 </div>
@@ -138,7 +149,11 @@
                     type="checkbox"
                     id="angular"
                     class="programming"
-                    value="{{data.angularImage}}"
+                    value="data.angularImage"
+                    name="angularImage"
+                    {{#if data.angularImage}}
+                      checked
+                    {{/if}}
                   />
                   <label for="angular">Angular</label>
                 </div>
@@ -147,7 +162,11 @@
                     type="checkbox"
                     id="golang"
                     class="programming"
-                    value="{{data.golangImage}}"
+                    value="data.golangImage"
+                    name="golangImage"
+                    {{#if data.golangImage}}
+                      checked
+                    {{/if}}
                   />
                   <label for="golang">Golang</label>
                 </div>

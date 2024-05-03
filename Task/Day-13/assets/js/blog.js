@@ -3,7 +3,7 @@ const dataBlog = [];
 function addBlog(event) {
   event.preventDefault();
 
-  const title = document.getElementById("title").value;
+  const name = document.getElementById("name").value;
   const start = document.getElementById("start").value;
   const end = document.getElementById("end").value;
   const description = document.getElementById("description").value;
@@ -15,8 +15,8 @@ function addBlog(event) {
   const upload = document.getElementById("upload").files[0];
   const imageURL = URL.createObjectURL(upload);
 
-  if (title === "") {
-    alert("Please Write Your Blog Title!");
+  if (name === "") {
+    alert("Please Write Your Blog Name!");
     return;
   } else if (start === "") {
     alert("Please Write Your Start Date Blog!");
@@ -70,7 +70,7 @@ function addBlog(event) {
   // );
 
   dataBlog.push({
-    title: title,
+    title: name,
     startDate: start,
     endDate: end,
     description: description,
