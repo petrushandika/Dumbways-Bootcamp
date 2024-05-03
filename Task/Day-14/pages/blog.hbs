@@ -13,7 +13,7 @@
   </head>
   <body class="bg-aliceblue">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-navbar">
       <div class="container-fluid container">
         <a class="navbar-brand" href="#">
           <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
@@ -32,14 +32,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/">Home</a>
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/blog">My Blog</a>
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
             </li>
             <li class="nav-item">
               <a
-                class="nav-link fw-semibold"
+                class="nav-link fw-semibold text-light"
                 href="/testimonial"
               >Testimonials</a>
             </li>
@@ -59,7 +59,9 @@
       <h2 class="text-center fs-3 fw-semibold">MY BLOG</h2>
       <hr class="line" />
       <div class="container w-100 d-flex justify-content-end">
-        <button class="btn btn-warning text-light h-25 rounded-pill d-flex">
+        <button
+          class="btn bg-navbar border-none text-light h-25 rounded-pill d-flex"
+        >
           <a href="/add-blog" class="text-decoration-none text-light">Add New
             Blog</a>
         </button>
@@ -74,7 +76,7 @@
             class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
           >
             <div class="card-image w-100">
-              <a href="/detail-blog/{{id}}">
+              <a href="/blog-detail/{{id}}">
                 <img
                   src="{{image}}"
                   alt="..."
@@ -83,26 +85,21 @@
               </a>
             </div>
             <div class="item w-100">
-              <div class="description">
-                <div class="heading">
-                  <a
-                    href="/detail-blog/{{id}}"
-                    class="text-decoration-none text-black"
-                  >
+              <a href="/blog-detail" class="text-decoration-none text-black">
+                <div class="description">
+                  <div class="heading">
                     <h3 class="fs-5 mt-3">{{title}}</h3>
-                  </a>
-                  <span class="time">{{start}}</span>
-                  <span class="time">{{end}}</span>
+                    <span class="time">{{duration}}</span>
+                  </div>
+                  <p>
+                    {{description}}
+                  </p>
                 </div>
-                <p>
-                  {{description}}
-                </p>
-              </div>
+              </a>
               <div class="language mb-3 d-flex gap-3">
-                {{nodeImage}}
-                {{reactImage}}
-                {{angularImage}}
-                {{golangImage}}
+                {{#each tech}}
+                  <i class="fa-brands fa-{{this}} fs-2"></i>
+                {{/each}}
               </div>
               <div>
                 <form
@@ -111,11 +108,9 @@
                   action="/delete-blog/{{id}}"
                 >
                   <a
-                    href="/edit-blog/{{id}}"  
+                    href="/edit-blog/{{id}}"
                     class="btn w-100 bg-black text-light border-none rounded-1"
-                  >
-                    Edit
-                  </a>
+                  >Edit</a>
                   <button
                     class="btn w-100 bg-black text-light border-none rounded-1"
                   >
@@ -136,5 +131,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/blog.js"></script>
   </body>
 </html>

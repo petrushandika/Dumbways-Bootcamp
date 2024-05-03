@@ -1,12 +1,10 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 const port = 5000;
-const path = require("path");
 const config = require("./config/config.json");
 const { Sequelize, QueryTypes } = require("sequelize");
 const { Query } = require("pg");
-const { title } = require("process");
-const { type } = require("os");
 const sequelize = new Sequelize(config.development);
 const blogModel = require("./models").blog;
 
@@ -35,7 +33,7 @@ app.get("/edit-blog/:id", editBlogView);
 
 app.get("/testimonial", testimonial);
 app.get("/contact", contact);
-app.get("/detail-blog/:id", blogDetail);
+app.get("/blog-detail/:id", blogDetail);
 
 const data = [];
 
@@ -45,86 +43,100 @@ function home(req, res) {
 }
 
 async function blog(req, res) {
-  try {
-    const query = "SELECT * FROM blogs";
-    const data = await sequelize.query(query, { type: QueryTypes.SELECT });
+  const query = "SELECT * FROM blogs";
+  const data = await sequelize.query(query, { type: QueryTypes.SELECT });
 
-    res.render("blog", { data });
-  } catch (error) {
-    console.error("Kesalahan saat mendapatkan data:", error);
-    res.status(500).send("Terjadi kesalahan saat memuat blog.");
-  }
+  res.render("blog", { data });
 }
 
 async function addBlog(req, res) {
-  const { title, description } = req.body;
+  try {
+    const { title, start, end, description, tech } = req.body;
 
-  // const defaultImage =
-  //   "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg";
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const time = endDate - startDate;
 
-  // const technology = {
-  //   node: nodeImage || "assets/images/node.svg",
-  //   react: reactImage || "assets/images/react.svg",
-  //   angular: angularImage || "assets/images/angular.svg",
-  //   golang: golangImage || "assets/images/golang.svg",
-  // };
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
 
-  // data.unshift({
-  //   image: image || defaultImage,
-  //   title,
-  //   start,
-  //   end,
-  //   description,
-  //   nodeImage: technology.node,
-  //   reactImage: technology.react,
-  //   angularImage: technology.angular,
-  //   golangImage: technology.golang,
-  // });
+    function duration() {
+      if (days < 30) {
+        return days + " Hari";
+      } else if (months < 12) {
+        return months + " Bulan";
+      } else {
+        return years + " Tahun";
+      }
+    }
 
-  const query = `INSERT INTO public.blogs(
-    title, description, image, "createdAt", "updatedAt")
-    VALUES ('${title}', '${description}', 'https://media.istockphoto.com/id/1296158947/photo/portrait-of-creative-trendy-black-african-male-designer-laughing.jpg?s=612x612&w=0&k=20&c=1Ws_LSzWjYvegGxHYQkkgVytdpDcnmK0upJyGOzEPcg=', now(), now());`;
+    const techs = Array.isArray(tech) ? tech : [tech];
+    const techArray = "{" + techs.join(",") + "}";
+    const query = `INSERT INTO blogs(title, start, "end", duration, description, tech) VALUES ('${title}', '${start}', '${end}', '${duration()}', '${description}', '${techArray}')`;
 
-  const data = await sequelize.query(query, { type: QueryTypes.INSERT });
+    console.log("Query:", query);
 
-  console.log(data);
-
-  res.redirect("/blog");
+    await sequelize.query(query, { type: QueryTypes.INSERT });
+    res.redirect("/blog");
+  } catch (error) {
+    console.error("Error", error);
+    res.status(500).send("Failed to add blog");
+  }
 }
 
 async function deleteBlog(req, res) {
   const { id } = req.params;
 
   const query = `DELETE FROM blogs WHERE id=${id}`;
+
   const data = await sequelize.query(query, { type: QueryTypes.DELETE });
 
-  console.log(data);
-
-  // data.splice(id, 1);
+  data.splice(id, 1);
   res.redirect("/blog");
 }
 
 async function editBlog(req, res) {
-  const { title, description, id } = req.body;
+  try {
+    const { id, title, start, end, description, tech } = req.body;
 
-  const query = `UPDATE blogs SET title='${title}', description='${description}' WHERE id=${id}`;
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const time = endDate - startDate;
 
-  const data = await sequelize.query(query, { type: QueryTypes.UPDATE });
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
 
-  console.log(data);
+    function duration() {
+      if (days < 30) {
+        return days + " Hari";
+      } else if (months < 12) {
+        return months + " Bulan";
+      } else {
+        return years + " Tahun";
+      }
+    }
 
-  // data[id] = {
-  //   title,
-  //   start,
-  //   end,
-  //   description,
-  //   nodeImage,
-  //   reactImage,
-  //   angularImage,
-  //   golangImage,
-  // };
+    const techs = Array.isArray(tech) ? tech : [tech];
+    const techArray = "{" + techs.join(",") + "}";
+    const query = `UPDATE blogs SET 
+      title='${title}', 
+      start='${start}', 
+      "end"='${end}', 
+      duration='${duration()}', 
+      description='${description}', 
+      tech='${techArray}'
+      WHERE id = ${id}`;
 
-  res.redirect("/");
+    console.log(query);
+
+    await sequelize.query(query, { type: QueryTypes.UPDATE });
+    res.redirect("/blog");
+  } catch (error) {
+    console.log("Error", error);
+    res.status(500).send("Failed to edit blog");
+  }
 }
 
 function addBlogView(req, res) {
@@ -133,10 +145,6 @@ function addBlogView(req, res) {
 
 async function editBlogView(req, res) {
   const { id } = req.params;
-
-  // const selectedData = data[id];
-  // selectedData.id = id;
-
   const data = await blogModel.findOne({
     where: { id },
   });
@@ -147,25 +155,12 @@ async function editBlogView(req, res) {
 async function blogDetail(req, res) {
   const { id } = req.params;
 
-  // const data = {
-  //   id,
-  //   title,
-  //   start,
-  //   end,
-  //   description,
-  //   nodeImage,
-  //   reactImage,
-  //   angularImage,
-  //   golangImage,
-  // };
-
   const query = `SELECT * FROM blogs WHERE id=${id}`;
+  const data = await sequelize.query(query, { type: QueryTypes.SELECT });
 
-  const data = await sequelize.query(query, { type: QueryTypes }.SELECT);
+  console.log("blog-detail", data[0]);
 
-  console.log(data);
-
-  res.render("detail-blog", { data: data });
+  res.render("blog-detail", { data: data });
 }
 
 function testimonial(req, res) {

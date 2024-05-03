@@ -58,6 +58,10 @@
   height: 250px;
 }
 
+.h-fit-content {
+  height: fit-content;
+}
+
 .mw-1 {
   max-width: 200px;
 }
@@ -126,3 +130,8 @@
   width: 35px;
   height: 35px;
 }
+
+.bg-navbar {
+  background: linear-gradient(135deg, #23debc, #2770ce);
+}
+
