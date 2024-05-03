@@ -54,25 +54,38 @@ function addBlog(req, res) {
     golangImage,
   } = req.body;
 
-  const defaultImage = "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg";
+  const startDate = new Date(start);
+  const endDate = new Date(end);
+  const time = endDate - startDate;
 
-  const technology = {
-    node: nodeImage || 'assets/images/node.svg',
-    react: reactImage || 'assets/images/react.svg',
-    angular: angularImage || 'assets/images/angular.svg',
-    golang: golangImage || 'assets/images/golang.svg'
-  };
+  const days = Math.floor(time / (1000 * 60 * 60 * 24));
+  const months = Math.floor(days / 30);
+  const years = Math.floor(months / 12);
+
+  function duration() {
+    if (days < 30) {
+      return days + " Hari";
+    } else if (months < 12) {
+      return months + " Bulan";
+    } else {
+      return years + " Tahun";
+    }
+  }
 
   data.unshift({
-    image: image || defaultImage,
+    image:
+      image ||
+      "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg",
     title,
     start,
     end,
+    duration: duration(),
+    year: startDate.getFullYear(),
     description,
-    nodeImage: technology.node,
-    reactImage: technology.react,
-    angularImage: technology.angular,
-    golangImage: technology.golang,
+    nodeImage,
+    reactImage,
+    angularImage,
+    golangImage,
   });
 
   res.redirect("/blog");
@@ -86,9 +99,8 @@ function deleteBlog(req, res) {
 }
 
 function editBlog(req, res) {
-  const { title, start, end, description, nodeImage, reactImage, angularImage, golangImage, id } = req.body;
-
-  data[id] = {
+  let {
+    image,
     title,
     start,
     end,
@@ -96,10 +108,47 @@ function editBlog(req, res) {
     nodeImage,
     reactImage,
     angularImage,
-    golangImage
+    golangImage,
+    id,
+  } = req.body;
+
+  let startDate = new Date(start);
+  let endDate = new Date(end);
+  let time = endDate - startDate;
+
+  let days = Math.floor(time / (1000 * 60 * 60 * 24));
+  let months = Math.floor(days / 30);
+  let years = Math.floor(months / 12);
+
+  function duration() {
+    if (days < 30) {
+      return days + " Hari";
+    } else if (months < 12) {
+      return months + " Bulan";
+    } else {
+      return years + " Tahun";
+    }
+  }
+
+  data[id] = {
+    image:
+      image ||
+      "https://img.freepik.com/free-photo/people-taking-selfie-together-registration-day_23-2149096795.jpg",
+    title,
+    start,
+    end,
+    duration: duration(),
+    year: startDate.getFullYear(),
+    description,
+    nodeImage,
+    reactImage,
+    angularImage,
+    golangImage,
   };
 
-  res.redirect("/");
+  const datas = data[id];
+  data.splice(id, 1, datas);
+  res.redirect("/blog");
 }
 
 function addBlogView(req, res) {

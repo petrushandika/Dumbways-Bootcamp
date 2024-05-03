@@ -13,7 +13,7 @@
   </head>
   <body class="bg-aliceblue">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-navbar">
       <div class="container-fluid container">
         <a class="navbar-brand" href="#">
           <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
@@ -32,14 +32,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/">Home</a>
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link fw-semibold" href="/blog">My Blog</a>
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
             </li>
             <li class="nav-item">
               <a
-                class="nav-link fw-semibold"
+                class="nav-link fw-semibold text-light"
                 href="/testimonial"
               >Testimonials</a>
             </li>
@@ -59,7 +59,9 @@
       <h2 class="text-center fs-3 fw-semibold">MY BLOG</h2>
       <hr class="line" />
       <div class="container w-100 d-flex justify-content-end">
-        <button class="btn btn-warning text-light h-25 rounded-pill d-flex">
+        <button
+          class="btn bg-navbar border-none text-light h-25 rounded-pill d-flex"
+        >
           <a href="/add-blog" class="text-decoration-none text-light">Add New
             Blog</a>
         </button>
@@ -87,8 +89,7 @@
                 <div class="description">
                   <div class="heading">
                     <h3 class="fs-5 mt-3">{{title}}</h3>
-                    <span class="time">{{start}}</span>
-                    <span class="time">{{end}}</span>
+                    <span class="time">{{duration}}</span>
                   </div>
                   <p>
                     {{description}}
@@ -96,10 +97,18 @@
                 </div>
               </a>
               <div class="language mb-3 d-flex gap-3">
-                {{nodeImage}}
-                {{reactImage}}
-                {{angularImage}}
-                {{golangImage}}
+                {{#if nodeImage}}
+                  <i class="fa-brands fa-node-js fs-1"></i>
+                {{/if}}
+                {{#if reactImage}}
+                  <i class="fa-brands fa-react fs-1"></i>
+                {{/if}}
+                {{#if angularImage}}
+                  <i class="fa-brands fa-angular fs-1"></i>
+                {{/if}}
+                {{#if golangImage}}
+                  <i class="fa-brands fa-golang fs-1"></i>
+                {{/if}}
               </div>
               <div>
                 <form
@@ -133,5 +142,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/blog.js"></script>
   </body>
 </html>
