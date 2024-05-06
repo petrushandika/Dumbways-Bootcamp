@@ -1,0 +1,122 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/responsive-bootstrap.css" />
+
+    <!-- Title -->
+    <title>My Blog</title>
+  </head>
+  <body class="bg-aliceblue">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-light"
+                href="/testimonial"
+              >Testimonials</a>
+            </li>
+          </ul>
+          <div class="d-flex gap-3 me-3">
+            <button class="btn bg-warning">
+              <a
+                href="/register"
+                class="text-decoration-none text-light"
+              >Register</a>
+            </button>
+            <button class="btn bg-success">
+              <a href="/login" class="text-decoration-none text-light">Login</a>
+            </button>
+          </div>
+          <button class="btn bg-orange text-light">
+            <a href="/contact" class="text-decoration-none text-light">Contact
+              Me</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Register Form -->
+    <div class="blog py-5">
+      <h2 class="text-center fs-3 fw-semibold">REGISTER</h2>
+      <form
+        method="POST"
+        action="/register"
+        class="container d-flex flex-column gap-3 justify-content-center align-items-center w-100 mw-3 h-auto"
+        id="form"
+      >
+        <!-- Name -->
+        <div class="input-field field w-100 d-flex flex-column">
+          <label for="name" class="fw-medium">Name</label>
+          <input
+            type="text"
+            id="name"
+            class="rounded-1 border-none outline-none p-1 px-2 b-s"
+            name="name"
+          />
+        </div>
+        <!-- Email -->
+        <div class="input-field field w-100 d-flex flex-column">
+          <label for="title" class="fw-medium">Email</label>
+          <input
+            type="text"
+            id="email"
+            class="rounded-1 border-none outline-none p-1 px-2 b-s"
+            name="email"
+          />
+        </div>
+        <!-- Password -->
+        <div class="input-field field w-100 d-flex flex-column">
+          <label for="password" class="fw-medium">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="rounded-1 border-none outline-none p-1 px-2 b-s"
+            name="password"
+          />
+        </div>
+        <!-- Submit Button -->
+        <div class="submit-field w-100 d-flex justify-content-end">
+          <button type="submit" class="btn border-none bg-white fw-semibold">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/blog.js"></script>
+  </body>
+</html>

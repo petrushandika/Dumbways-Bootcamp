@@ -1,0 +1,188 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/responsive-bootstrap.css" />
+
+    <!-- Title -->
+    <title>My Blog</title>
+  </head>
+  <body class="bg-aliceblue">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-light"
+                href="/testimonial"
+              >Testimonials</a>
+            </li>
+          </ul>
+          <button class="btn bg-orange text-light">
+            <a
+              href="/contact"
+              class="text-decoration-none text-light"
+            >Contact</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blog Form -->
+    <div class="blog py-5">
+      <h2 class="text-center fs-3 fw-semibold">ADD MY BLOG</h2>
+      <form
+        method="POST"
+        action="/blog"
+        class="container d-flex flex-column gap-3 justify-content-center align-items-center w-100 mw-3 h-auto"
+        id="form"
+      >
+        <!-- Blog Name -->
+        <div class="input-field field w-100 d-flex flex-column">
+          <label for="title" class="fw-medium">Blog Name</label>
+          <input
+            type="text"
+            id="title"
+            class="rounded-1 border-none outline-none p-1 px-2 b-s"
+            name="title"
+          />
+        </div>
+
+        <!-- Blog Dates -->
+        <div class="input-field field w-100">
+          <div class="date-time d-flex gap-2">
+            <div class="date w-100 d-flex flex-column">
+              <label for="start" class="fw-medium">Start Date</label>
+              <input
+                type="date"
+                id="start"
+                class="rounded-1 border-none outline-none p-1 px-2 b-s"
+                name="start"
+              />
+            </div>
+            <div class="date w-100 d-flex flex-column">
+              <label for="end" class="fw-medium">End Date</label>
+              <input
+                type="date"
+                id="end"
+                class="rounded-1 border-none outline-none p-1 px-2 b-s"
+                name="end"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Blog Description -->
+        <div class="textarea-field field w-100 d-flex flex-column">
+          <label for="description" class="fw-medium">Description</label>
+          <textarea
+            id="description"
+            class="rounded-1 border-none outline-none p-1 px-2 resize-none h-5 b-s"
+            name="description"
+          ></textarea>
+        </div>
+
+        <!-- Technologies Selection -->
+        <div class="checkbox-field field w-100">
+          <label class="fw-medium">Technologies</label>
+          <div class="grid-container">
+            <div class="grid-item">
+              <div class="flex-container row row-cols-2">
+                <div class="col">
+                  <input
+                    type="checkbox"
+                    id="node"
+                    class="programming"
+                    name="tech"
+                    value="node"
+                  />
+                  <label for="node">Node.js</label>
+                </div>
+                <div class="col">
+                  <input
+                    type="checkbox"
+                    id="react"
+                    class="programming"
+                    name="tech"
+                    value="react"
+                  />
+                  <label for="react">React.js</label>
+                </div>
+                <div class="col">
+                  <input
+                    type="checkbox"
+                    id="angular"
+                    class="programming"
+                    name="tech"
+                    value="angular"
+                  />
+                  <label for="angular">Angular</label>
+                </div>
+                <div class="col">
+                  <input
+                    type="checkbox"
+                    id="golang"
+                    class="programming"
+                    name="tech"
+                    value="golang"
+                  />
+                  <label for="golang">Golang</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upload Field -->
+        <div class="input-field w-100 d-flex flex-column">
+          <label for="upload" class="fw-medium">Upload Image</label>
+          <input
+            type="file"
+            id="upload"
+            class="bg-white rounded-1 b-s"
+            name="image"
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="container submit-field w-100 d-flex justify-content-end">
+          <button type="submit" class="btn border-none bg-white fw-semibold">
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,187 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/responsive-bootstrap.css" />
+    <title>Home</title>
+  </head>
+  <body class="bg-aliceblue">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-light"
+                href="/testimonial"
+              >Testimonials</a>
+            </li>
+          </ul>
+          <div class="d-flex gap-3 me-3">
+            <button class="btn bg-warning">
+              <a
+                href="/register"
+                class="text-decoration-none text-light"
+              >Register</a>
+            </button>
+            <button class="btn bg-success">
+              <a href="/login" class="text-decoration-none text-light">Login</a>
+            </button>
+          </div>
+          <button class="btn bg-orange text-light">
+            <a
+              href="/contact"
+              class="text-decoration-none text-light"
+            >Contact Me</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    {{#if messages.success}}
+      <div
+        style="padding: 20px; background-color: green; width:100%; color: white"
+      >
+        {{messages.success}}
+      </div>
+    {{/if}}
+
+    <!-- Content Section -->
+    <div class="content d-flex container p-5 mt-5 b-s rounded-1">
+      <div class="introduction">
+        <!-- Profile Information -->
+        <div class="profile">
+          <h2>Hi, Welcome to my hut</h2>
+          <p>
+            I am an enthusiastic student at Gunadarma University, majoring in
+            Information Systems under the Faculty of Computer Science and
+            Information Technology. My interests primarily revolve around UI/UX
+            Design, Database Systems, and Web Development. I actively seek
+            practical experiences outside the classroom to complement my
+            academic curriculum and am committed to continuous learning and
+            growth in these areas.
+          </p>
+          <div class="">
+            <div class="row">
+              <div class="col">
+                <div class="d-flex gap-2">
+                  <i class="fa-brands fa-js fs-1"></i>
+                  <p class="mt-2">JavaScript</p>
+                </div>
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex gap-2">
+                  <i class="fa-brands fa-github fs-1"></i>
+                  <p class="mt-2">Github</p>
+                </div>
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.</p>
+                </div>
+              </div>
+              <div class="col">
+                <div class="d-flex gap-2">
+                  <i class="fa-brands fa-node-js fs-1"></i>
+                  <p class="mt-2">Backend</p>
+                </div>
+                <div class="">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Social Media Links -->
+        <div
+          class="social-media w-100 d-flex flex-column gap-3 mt-2"
+          id="contact"
+        >
+          <div class="">
+            <h2 class="fs-3">Find Me On</h2>
+          </div>
+          <div class="d-flex gap-4">
+            <a href="https://www.linkedin.com/in/petrushandika/">
+              <i class="fa-brands fa-linkedin-in fs-2 text-black linkedin"></i>
+            </a>
+            <a href="https://www.instagram.com/petrushandika/">
+              <i class="fa-brands fa-instagram fs-2 text-black"></i>
+            </a>
+            <a href="https://facebook.com/petrushandikasinaga">
+              <i class="fa-brands fa-facebook-f fs-2 text-black"></i>
+            </a>
+            <a href="https://github.com/petrushandika">
+              <i class="fa-brands fa-github fs-2 text-black"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Profile Card -->
+      <div class="d-flex flex-column gap-3">
+        <div class="card-profile b-s rounded-1 text-center h-fit-content">
+          <img
+            src="../assets/images/profiles.jpg"
+            alt="Profile Picture"
+            class="w-5 rounded-top"
+          />
+          <h2 class="fs-4 mt-2">Petrus Handika</h2>
+          <p class="fs-6 mb-2">Fullstack Developer</p>
+        </div>
+        <div class="contact d-flex align-items-center flex-row gap-3">
+          <button class="rounded-1 border bg-black w-2" style="height: 35px">
+            <a
+              href="#contact"
+              class="text-decoration-none text-light"
+            >Contact</a>
+          </button>
+          <p class="mt-3">Download CV</p>
+          <a href="../assets/pdf/cv.pdf">
+            <i class="fa-solid fa-download text-dark"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

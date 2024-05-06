@@ -1,0 +1,146 @@
+.w-1 {
+  width: 50px;
+}
+
+.w-2 {
+  width: 100px;
+}
+
+.w-3 {
+  width: 150px;
+}
+
+.w-4 {
+  width: 200px;
+}
+
+.w-5 {
+  width: 250px;
+}
+
+.h-1 {
+  height: 25px;
+}
+
+.h-2 {
+  height: 50px;
+}
+
+.h-3 {
+  height: 75px;
+}
+
+.h-4 {
+  height: 100px;
+}
+
+.h-5 {
+  height: 125px;
+}
+
+.h-6 {
+  height: 150px;
+}
+
+.h-7 {
+  height: 175px;
+}
+
+.h-8 {
+  height: 200px;
+}
+
+.h-9 {
+  height: 225px;
+}
+
+.h-10 {
+  height: 250px;
+}
+
+.h-fit-content {
+  height: fit-content;
+}
+
+.mw-1 {
+  max-width: 200px;
+}
+
+.mw-2 {
+  max-width: 400px;
+}
+
+.mw-3 {
+  max-width: 600px;
+}
+
+.mw-4 {
+  max-width: 800px;
+}
+
+.mw-5 {
+  max-width: 1000px;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.bg-orange {
+  background-color: orangered;
+}
+
+.bg-aliceblue {
+  background-color: aliceblue;
+}
+
+.border-none {
+  border: none;
+}
+
+.outline-none {
+  outline: none;
+}
+
+.resize-none {
+  resize: none;
+}
+
+.b-s {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.error-text {
+  font-size: 0.8em;
+  color: red;
+  margin: 5px 1px;
+  display: none;
+}
+
+.item.error {
+  border: 1px solid red;
+}
+
+.input-field.error .error-text,
+.textarea-field.error .error-text {
+  display: block;
+}
+
+.icon-small {
+  width: 35px;
+  height: 35px;
+}
+
+.bg-navbar {
+  background: linear-gradient(135deg, #23debc, #2770ce);
+}
+
+.description {
+  overflow: hidden;
+}
+
+.heading {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
