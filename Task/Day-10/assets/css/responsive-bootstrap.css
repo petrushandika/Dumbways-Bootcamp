@@ -20,6 +20,11 @@
     .social-media {
         margin-bottom: 25px;
     }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 @media only screen and (max-width: 768px) {
