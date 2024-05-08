@@ -1,4 +1,6 @@
-CREATE DATABASE company CREATE TABLE depatments (
+CREATE DATABASE company;
+
+CREATE TABLE depatments (
     department_id INTEGER PRIMARY KEY,
     department_name
 );
