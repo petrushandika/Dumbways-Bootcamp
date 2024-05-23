@@ -3,7 +3,7 @@ const app = express();
 const port = 5000;
 const path = require("path");
 const config = require("./config/config.json");
-const { Sequelize, QueryTypes, where } = require("sequelize");
+const { Sequelize, QueryTypes } = require("sequelize");
 const sequelize = new Sequelize(config.development);
 const blogModel = require("./models").blog;
 const User = require("./models").user;
@@ -49,6 +49,7 @@ app.post("/delete-blog/:id", deleteBlog);
 app.get("/add-blog", addBlogView);
 app.get("/edit-blog/:id", editBlogView);
 
+app.get("/testimonial", testimonial);
 app.get("/contact", contact);
 app.get("/blog-detail/:id", blogDetail);
 
@@ -78,22 +79,48 @@ async function blog(req, res) {
 }
 
 async function addBlog(req, res) {
-  const { title, description } = req.body;
+  try {
+    const { title, start, end, description, tech } = req.body;
 
-  // const query = `INSERT INTO public.blogs(
-  //   title, description, image, "createdAt", "updatedAt")
-  //   VALUES ('${title}', '${description}', 'https://media.istockphoto.com/id/1296158947/photo/portrait-of-creative-trendy-black-african-male-designer-laughing.jpg?s=612x612&w=0&k=20&c=1Ws_LSzWjYvegGxHYQkkgVytdpDcnmK0upJyGOzEPcg=', now(), now());`;
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const time = endDate - startDate;
 
-  // const data = await sequelize.query(query, { type: QueryTypes.INSERT });
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
 
-  const data = await blogModel.create({
-    title,
-    description,
-    image:
-      "https://media.istockphoto.com/id/1296158947/photo/portrait-of-creative-trendy-black-african-male-designer-laughing.jpg?s=612x612&w=0&k=20&c=1Ws_LSzWjYvegGxHYQkkgVytdpDcnmK0upJyGOzEPcg=",
-  });
+    function duration() {
+      if (days < 30) {
+        return days + " Hari";
+      } else if (months < 12) {
+        return months + " Bulan";
+      } else {
+        return years + " Tahun";
+      }
+    }
 
-  res.redirect("/blog");
+    const techs = Array.isArray(tech) ? tech : [tech];
+    const techArray = "{" + techs.join(",") + "}";
+    // const query = `INSERT INTO blogs(title, start, "end", duration, description, tech) VALUES ('${title}', '${start}', '${end}', '${duration()}', '${description}', '${techArray}')`;
+
+    // await sequelize.query(query, { type: QueryTypes.INSERT });
+
+    const data = await blogModel.create({
+      title,
+      start,
+      end,
+      description,
+      techArray,
+      image:
+        "https://media.istockphoto.com/id/1296158947/photo/portrait-of-creative-trendy-black-african-male-designer-laughing.jpg?s=612x612&w=0&k=20&c=1Ws_LSzWjYvegGxHYQkkgVytdpDcnmK0upJyGOzEPcg=",
+    });
+
+    res.redirect("/blog");
+  } catch (error) {
+    console.error("Error", error);
+    res.status(500).send("Failed to add blog");
+  }
 }
 
 async function deleteBlog(req, res) {
@@ -101,6 +128,7 @@ async function deleteBlog(req, res) {
 
   // const query = `DELETE FROM blogs WHERE id=${id}`;
   // const data = await sequelize.query(query, { type: QueryTypes.DELETE });
+  // data.splice(id, 1);
 
   const data = await blogModel.destroy({
     where: { id },
@@ -110,22 +138,62 @@ async function deleteBlog(req, res) {
 }
 
 async function editBlog(req, res) {
-  const { title, description, id } = req.body;
+  try {
+    const { id, title, start, end, description, tech } = req.body;
 
-  // const query = `UPDATE blogs SET title='${title}', description='${description}' WHERE id=${id}`;
-  // const data = await sequelize.query(query, { type: QueryTypes.UPDATE });
+    const startDate = new Date(start);
+    const endDate = new Date(end);
+    const time = endDate - startDate;
 
-  const data = await blogModel.update(
-    {
-      title,
-      description,
-    },
-    {
-      where: { id },
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const months = Math.floor(days / 30);
+    const years = Math.floor(months / 12);
+
+    function duration() {
+      if (days < 30) {
+        return days + " Hari";
+      } else if (months < 12) {
+        return months + " Bulan";
+      } else {
+        return years + " Tahun";
+      }
     }
-  );
 
-  res.redirect("/");
+    const techs = Array.isArray(tech) ? tech : [tech];
+    const techArray = "{" + techs.join(",") + "}";
+    // const query = `UPDATE blogs SET
+    //   title='${title}',
+    //   start='${start}',
+    //   "end"='${end}',
+    //   duration='${duration()}',
+    //   description='${description}',
+    //   tech='${techArray}'
+    //   WHERE id = ${id}`;
+
+    // console.log(query);
+
+    // await sequelize.query(query, { type: QueryTypes.UPDATE });
+
+    const data = await blogModel.update(
+      {
+        title,
+        start,
+        end,
+        description,
+        techArray,
+      },
+      {
+        where: { id },
+      }
+    );
+
+    console.log(data);
+
+    res.redirect("/blog");
+  } catch (error) {
+    console.log("Error", error);
+    res.status(500).send("Failed to edit blog");
+  }
 }
 
 function addBlogView(req, res) {
@@ -134,15 +202,34 @@ function addBlogView(req, res) {
 
 async function editBlogView(req, res) {
   const { id } = req.params;
-
-  // const selectedData = data[id];
-  // selectedData.id = id;
-
   const data = await blogModel.findOne({
     where: { id },
   });
 
   res.render("edit-blog", { data });
+}
+
+async function blogDetail(req, res) {
+  const { id } = req.params;
+
+  // const query = `SELECT * FROM blogs WHERE id=${id}`;
+  // const data = await sequelize.query(query, { type: QueryTypes.SELECT });
+
+  // console.log("blog-detail", data[0]);
+
+  const data = await blogModel.findOne({
+    where: { id },
+  });
+
+  res.render("blog-detail", { data: data });
+}
+
+function testimonial(req, res) {
+  res.render("testimonial");
+}
+
+function contact(req, res) {
+  res.render("contact");
 }
 
 function registerView(req, res) {
@@ -160,13 +247,18 @@ async function register(req, res) {
 
   const hashedPassword = await bcrypt.hash(password, salt);
 
+  // const query = `
+  //     INSERT INTO users (name, email, password, "createdAt", "updatedAt") VALUES ('${name}', '${email}', '${hashedPassword}', NOW(), NOW())
+  //     `;
+  // const data = await sequelize.query(query, { type: QueryTypes.INSERT });
+
   await User.create({
     name,
     email,
     password: hashedPassword,
   });
 
-  res.redirect("/");
+  res.redirect("/login");
 }
 
 async function login(req, res) {
@@ -201,7 +293,7 @@ async function login(req, res) {
 
   // console.log("Login berhasil!");
   req.flash("success", "Login Berhasil!");
-  res.redirect("/");
+  res.redirect("/blog");
 }
 
 async function logout(req, res) {
@@ -211,25 +303,6 @@ async function logout(req, res) {
     console.log("Logout success!");
     res.redirect("/");
   });
-}
-
-function contact(req, res) {
-  res.render("contact");
-}
-
-async function blogDetail(req, res) {
-  const { id } = req.params;
-
-  // const query = `SELECT * FROM blogs WHERE id=${id}`;
-  // const data = await sequelize.query(query, { type: QueryTypes.SELECT });
-
-  // console.log("blog-detail", data[0]);
-
-  const data = await blogModel.findOne({
-    where: { id },
-  });
-
-  res.render("blog-detail", { data: data });
 }
 
 app.listen(port, () => {

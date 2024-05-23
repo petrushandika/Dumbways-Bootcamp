@@ -1,0 +1,108 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/responsive-bootstrap.css" />
+    <title>Detail Blog</title>
+  </head>
+  <body class="bg-aliceblue">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-light"
+                href="/testimonial"
+              >Testimonials</a>
+            </li>
+          </ul>
+          <button class="btn bg-orange text-light">
+            <a
+              href="/contact"
+              class="text-decoration-none text-light"
+            >Contact</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Detail Blog -->
+    <div class="detail container py-5">
+      <h2 class="text-center fs-3 fw-semibold mb-5">{{data.title}}</h2>
+      <div class="content d-flex gap-5">
+        <div class="image-content">
+          <img
+            src="../assets/images/mobile.png"
+            alt="application"
+            class="rounded-1"
+          />
+        </div>
+        <div class="detail-content">
+          <div class="duration">
+            <h3 class="mb-3">Duration</h3>
+            <div class="detail-duration d-flex flex-column gap-2">
+              <div class="d-flex">
+                <i class="fa-regular fa-calendar-days fs-3"></i>
+                <p class="ms-2">{{data.start}} - {{data.end}}</p>
+              </div>
+              <div class="d-flex">
+                <i class="fa-regular fa-clock fs-3"></i>
+                <p class="ms-2">{{data.duration}}</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="technologies">
+            <h3 class="mb-3">Technologies</h3>
+            <div
+              class="detail-technologies grid-technologies d-flex flex-column gap-3"
+            >
+              {{#each tech}}
+                <div class="item-technologies">
+                  <div class="{{this}}">
+                    <i class="fa-brands fa-{{this}} fs-3"></i>
+                    <span class="">{{this}}</span>
+                  </div>
+                </div>
+              {{/each}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description mt-5">
+        <p>
+          {{data.description}}
+        </p>
+      </div>
+    </div>
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,165 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Stylesheets -->
+    <link href="../assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+    <link rel="stylesheet" href="../assets/css/responsive-bootstrap.css" />
+
+    <!-- Title -->
+    <title>My Blog</title>
+  </head>
+  <body class="bg-aliceblue">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-navbar">
+      <div class="container-fluid container">
+        <a class="navbar-brand" href="#">
+          <img src="../assets/images/dumbways.png" alt="Logo" class="w-1" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-semibold text-light" href="/blog">My Blog</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link fw-semibold text-light"
+                href="/testimonial"
+              >Testimonials</a>
+            </li>
+          </ul>
+
+          {{#unless isLogin}}
+            <div class="d-flex gap-3 me-3">
+              <button class="btn bg-warning">
+                <a
+                  href="/register"
+                  class="text-decoration-none text-light"
+                >Register</a>
+              </button>
+              <button class="btn bg-success">
+                <a
+                  href="/login"
+                  class="text-decoration-none text-light"
+                >Login</a>
+              </button>
+            </div>
+          {{/unless}}
+
+          {{#if isLogin}}
+            <div class="d-flex gap-3 align-items-center">
+              <p class="text-light fw-semibold">Welcome, {{user.name}}</p>
+              <form action="/logout" method="POST">
+                <button class="btn bg-danger text-light me-3">Logout</button>
+              </form>
+            </div>
+          {{/if}}
+
+          <button class="btn bg-orange text-light">
+            <a href="/contact" class="text-decoration-none text-light">Contact
+              Me</a>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Blogs Content -->
+    <div class="content container blog-content py-5">
+      <h2 class="text-center fs-3 fw-semibold">MY BLOG</h2>
+      <hr class="line" />
+      {{#if isLogin}}
+        <div class="container w-100 d-flex justify-content-end">
+          <button
+            class="btn bg-navbar border-none text-light h-25 rounded-pill d-flex"
+          >
+            <a href="/add-blog" class="text-decoration-none text-light">Add New
+              Blog</a>
+          </button>
+        </div>
+      {{/if}}
+      <div
+        class="grid-content row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-5 d-flex justify-content-center align-items-center mt-5"
+        id="blog"
+      >
+        <!-- Blog Card -->
+        {{#each data}}
+          <div
+            class="card-item col rounded-1 d-flex flex-column justify-content-center b-s"
+          >
+            <div class="card-image w-100">
+              <a href="/blog-detail/{{id}}">
+                <img
+                  src="{{image}}"
+                  alt="..."
+                  class="w-100 h-8 mt-3 rounded-1"
+                />
+              </a>
+            </div>
+            <div class="item w-100">
+              <a href="/blog-detail" class="text-decoration-none text-black">
+                <div class="description">
+                  <div class="heading">
+                    <h3 class="fs-5 mt-3">{{title}}</h3>
+                    <span class="time">{{duration}}</span>
+                    <span class="time">{{start}} | {{name}}</span>
+                  </div>
+                  <p>
+                    {{description}}
+                  </p>
+                </div>
+              </a>
+              <div class="language mb-3 d-flex gap-3">
+                {{#each tech}}
+                  <i class="fa-brands fa-{{this}} fs-2"></i>
+                {{/each}}
+              </div>
+              <div>
+                <form
+                  class="button-field pb-3 d-flex gap-1"
+                  method="POST"
+                  action="/delete-blog/{{id}}"
+                >
+                  <a
+                    href="/edit-blog/{{id}}"
+                    class="btn w-100 bg-black text-light border-none rounded-1"
+                  >Edit</a>
+                  <button
+                    class="btn w-100 bg-black text-light border-none rounded-1"
+                  >
+                    Delete
+                  </button>
+                </form>
+              </div>
+
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script
+      src="https://kit.fontawesome.com/ebda1b5b9f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/blog.js"></script>
+  </body>
+</html>
